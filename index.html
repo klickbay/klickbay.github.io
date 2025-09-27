@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="ArtiZen Kicks | Sneakers & Premium Shoe Care">
   <meta property="og:description" content="Step into confidence with sneakers, kids' shoes, and sneaker culture rooted in legacy.">
-  <meta property="og:image" content="Logo2.png">
+  <meta property="og:image" content="Gemini_Generated_Image_a9wlfja9wlfja9wl.png">
   <meta property="og:url" content="https://nomzanmazi.github.io/artyzen-kicks/">
   <meta property="og:type" content="website">
 
@@ -91,6 +91,17 @@
       animation: pulse 2s infinite;
     }
     .whatsapp-button i { font-size: 30px; }
+
+    /* Hero Flip Animation */
+    .hero-flip {
+      animation: flipCoin 10s linear infinite;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes flipCoin {
+      0%   { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
   </style>
 </head>
 
@@ -120,9 +131,10 @@
     </div>
   </header>
 
-  <section class="relative h-[70vh] flex items-center justify-center text-center">
+  <section class="relative h-[70vh] flex flex-col items-center justify-center text-center">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="relative z-10 px-6">
+      <img src="HeroImage.jpg" alt="Hero Image" class="mx-auto hero-flip w-[400px] h-auto rounded-lg shadow-lg mb-8">
       <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-wide">Exquisite Style, Tailored For You.</h1>
       <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
         Sneakers, kids' shoes, and care services crafted with legacy, culture, and passion.
@@ -198,7 +210,7 @@
   <footer class="bg-black bg-opacity-70 py-8 shadow-inner">
     <div class="container mx-auto px-6 text-center">
       <div class="flex justify-center mb-4">
-        <img src="Logo2.png" alt="ArtiZen Kicks Logo" class="h-16 w-auto rounded-full">
+        <img src="Gemini_Generated_Image_a9wlfja9wlfja9wl.png" alt="ArtiZen Kicks Logo" class="h-16 w-auto rounded-full">
       </div>
       <p class="text-gray-300">© 2025 ArtiZen Kicks. All rights reserved.</p>
     </div>
