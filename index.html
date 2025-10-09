@@ -40,7 +40,7 @@
     }
     .gallery-img:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(95,158,160,0.4);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.35);
     }
 
     .logo-big {
@@ -54,17 +54,20 @@
       to { transform: rotate(360deg); }
     }
 
-    .yaga-pink {
-      background-color: white;
-      color: hotpink;
+    .kb-primary {
+      background: linear-gradient(135deg, #d4af37, #f5d76e);
+      color: #111;
       font-weight: bold;
-      border: 2px solid hotpink;
+      border: 2px solid #d4af37;
       transition: all 0.3s ease-in-out;
       animation: pulse 2s infinite;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
     }
-    .yaga-pink:hover {
-      background-color: hotpink;
-      color: white;
+    .kb-primary:hover {
+      background: #111;
+      color: #fff;
+      border-color: #f59e0b;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
     }
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -132,22 +135,22 @@
         <span class="sr-only">KLICKBAY</span>
       </a>
       <div class="hidden md:flex space-x-6">
-        <a href="#kids" class="hover:text-teal-200 transition">Kids' Shoes</a>
-        <a href="#sneakers" class="hover:text-teal-200 transition">Sneakers</a>
-        <a href="#perfumes" class="hover:text-teal-200 transition">Perfumes</a>
-        <a href="#services" class="hover:text-teal-200 transition">Services</a>
-        <a href="#contact" class="hover:text-teal-200 transition">Contact</a>
+        <a href="#kids" class="hover:text-yellow-300 transition">Kids' Shoes</a>
+        <a href="#sneakers" class="hover:text-yellow-300 transition">Sneakers</a>
+        <a href="#perfumes" class="hover:text-yellow-300 transition">Perfumes</a>
+        <a href="#services" class="hover:text-yellow-300 transition">Services</a>
+        <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
       </div>
       <button id="mobile-menu-button" class="md:hidden text-white">
         <i class="fas fa-bars fa-2x"></i>
       </button>
     </nav>
     <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-      <a href="#kids" class="block py-2 hover:text-teal-200">Kids' Shoes</a>
-      <a href="#sneakers" class="block py-2 hover:text-teal-200">Sneakers</a>
-      <a href="#perfumes" class="block py-2 hover:text-teal-200">Perfumes</a>
-      <a href="#services" class="block py-2 hover:text-teal-200">Services</a>
-      <a href="#contact" class="block py-2 hover:text-teal-200">Contact</a>
+      <a href="#kids" class="block py-2 hover:text-yellow-300">Kids' Shoes</a>
+      <a href="#sneakers" class="block py-2 hover:text-yellow-300">Sneakers</a>
+      <a href="#perfumes" class="block py-2 hover:text-yellow-300">Perfumes</a>
+      <a href="#services" class="block py-2 hover:text-yellow-300">Services</a>
+      <a href="#contact" class="block py-2 hover:text-yellow-300">Contact</a>
     </div>
   </header>
 
@@ -159,8 +162,8 @@
         Sneakers, kids' shoes, luxury perfumes at affordable prices, and premium care — crafted with legacy, culture, and passion.
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="https://www.yaga.co.za/artyzen-kicks" target="_blank" class="yaga-pink py-3 px-8 rounded-lg">Shop Sneakers on Yaga</a>
-        <a href="https://wa.me/27680320894?text=Hi%20KLICKBAY%2C%20I%27d%20like%20to%20order%20a%20perfume" target="_blank" class="yaga-pink py-3 px-8 rounded-lg">Order Perfumes on WhatsApp</a>
+        <a href="https://www.yaga.co.za/artyzen-kicks" target="_blank" class="kb-primary py-3 px-8 rounded-lg">Shop Sneakers on Yaga</a>
+        <a href="https://wa.me/27680320894?text=Hi%20KLICKBAY%2C%20I%27d%20like%20to%20order%20a%20perfume" target="_blank" class="kb-primary py-3 px-8 rounded-lg">Order Perfumes on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -194,20 +197,11 @@
 
     <!-- Perfumes -->
     <section id="perfumes" class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-4">Luxury Perfumes — Affordable Prices</h2>
-      <p class="text-center text-gray-200 mb-8">Top 20 Best Sellers | Premium quality, long-lasting inspired scents</p>
-
-      <!-- Pricing -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto mb-10">
-        <div class="p-4 bg-black bg-opacity-70 rounded-lg text-center"><div class="text-xl font-semibold">30 ml</div><div class="text-teal-300">R160</div></div>
-        <div class="p-4 bg-black bg-opacity-70 rounded-lg text-center"><div class="text-xl font-semibold">50 ml</div><div class="text-teal-300">R210</div></div>
-        <div class="p-4 bg-black bg-opacity-70 rounded-lg text-center"><div class="text-xl font-semibold">100 ml</div><div class="text-teal-300">R300</div></div>
-        <div class="p-4 bg-black bg-opacity-70 rounded-lg text-center"><div class="text-xl font-semibold">Fragrance Lotion</div><div class="text-teal-300">R150</div></div>
-      </div>
+      <h2 class="text-3xl font-bold text-center mb-4">Luxury Perfumes</h2>
+      <p class="text-center text-gray-200 mb-8">Premium quality, long-lasting inspired scents. Order via WhatsApp.</p>
 
       <div class="text-center mb-12">
-        <a href="https://wa.me/27680320894?text=Hi%20KLICKBAY%2C%20I%27d%20like%20to%20order%20a%20perfume%20(30ml%20R160%2C%2050ml%20R210%2C%20100ml%20R300%2C%20Lotion%20R150).%20Fragrance%3A%20" target="_blank" class="yaga-pink py-3 px-8 rounded-lg">📲 ORDER HERE NOW</a>
-        <p class="mt-3 text-sm text-gray-300">WhatsApp: +27 68 032 0894</p>
+        <a href="https://wa.me/27680320894?text=Hi%20KLICKBAY%2C%20I%27d%20like%20to%20order%20a%20perfume%20(30ml%2C%2050ml%2C%20100ml%2C%20Lotion).%20Fragrance%3A%20" target="_blank" class="kb-primary py-3 px-8 rounded-lg">📲 ORDER HERE ON WHATSAPP</a>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -245,7 +239,7 @@
         <div class="p-6 bg-black bg-opacity-70 rounded-lg shadow-md">
           <h3 class="text-2xl font-semibold mb-4">Unisex / Niche</h3>
           <ul class="space-y-4 text-sm">
-            <li><span class="font-semibold">Baccarat Rouge 540:</span> Amber, saffron, warm sugar, woods — sweet, airy, ultra-luxurious.</li>
+            <li><span class="font-semibold">Baccarat Rouge 540:</span> Amber, saffron, warm sugar, woods — sweet, airy, ultra‑luxurious.</li>
             <li><span class="font-semibold">Tobacco Vanille:</span> Rich tobacco leaf, creamy vanilla, warm spice — intoxicating comfort.</li>
             <li><span class="font-semibold">Santal 33:</span> Creamy sandalwood, leather, cedar — crisp, woody, modern.</li>
             <li><span class="font-semibold">Neroli Portofino:</span> Sparkling citrus, neroli flower, amber — clean, bright summer luxury.</li>
@@ -292,7 +286,7 @@
   </main>
 
   <!-- WhatsApp Button -->
-  <a href="https://wa.me/27680320894" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">
+  <a href="https://wa.me/27680320894" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp (+27680320894)">
     <i class="fab fa-whatsapp"></i>
   </a>
 
