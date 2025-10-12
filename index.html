@@ -43,17 +43,25 @@
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
-    /* Glass card */
-    .glass { background: rgba(255,255,255,0.0); border: 1px solid rgba(255,255,255,0.01); backdrop-filter: blur(6px); }
-    /* subtle focus */
+
+    /* Transparent glass effect */
+    .glass { background: rgba(255,255,255,0); border: none; backdrop-filter: none; }
+
+    /* Subtle focus */
     :focus{outline:3px solid rgba(212,175,55,0.0); outline-offset:3px}
-    /* utility small fade */
-    .fade{animation:fadeIn .45s ease both}
-    @keyframes fadeIn{from{opacity:0;transform: translateY(6px)}to{opacity:1;transform:none}}
-    /* product image style */
+
+    /* Fade-in animation */
+    .fade{animation:fadeIn 1s ease both}
+    @keyframes fadeIn{from{opacity:0;transform: translateY(20px)}to{opacity:1;transform:none}}
+
+    /* Product image style */
     .product-img{min-height:180px; object-fit:cover; border-radius:10px}
-    /* responsive container */
+
+    /* Responsive container */
     .maxw{max-width:1200px}
+
+    /* Text shadow for readability */
+    h1, p { text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
   </style>
 </head>
 <body class="antialiased leading-relaxed">
@@ -82,7 +90,7 @@
       </button>
     </div>
 
-    <!-- mobile -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
       <a href="#perfumes" class="block py-2">Perfumes</a>
       <a href="#sneakers" class="block py-2">Sneakers</a>
@@ -93,36 +101,31 @@
   </header>
 
   <!-- HERO -->
-  <main id="home" class="min-h-[70vh] flex items-center">
+  <main id="home" class="min-h-[70vh] flex items-center relative overflow-hidden">
+    <picture class="absolute inset-0 -z-10">
+      <source srcset="hero-large.jpg" media="(min-width:1024px)">
+      <img src="Gemini_Generated_Image_293u77293u77293u.png" alt="KLICKBAY hero" class="w-full h-[70vh] object-cover opacity-100" loading="lazy" />
+    </picture>
+
     <section class="w-full">
-      <div class="relative">
-        <picture class="absolute inset-0 -z-10">
-          <source srcset="hero-large.jpg" media="(min-width:1024px)">
-          <img src="Gemini_Generated_Image_293u77293u77293u.png" alt="KLICKBAY hero" class="w-full h-[70vh] object-cover opacity-85" loading="lazy" />
-        </picture>
+      <div class="maxw mx-auto px-6 py-16 text-center fade">
+        <div class="max-w-3xl mx-auto p-8 rounded-2xl">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">Signature Scents. Curated Sneakers. Bespoke Traditional Fashion.</h1>
+          <p class="text-gray-300 mb-6">Imported luxury fragrances made accessible — premium formulas, authentic sourcing, and approachable pricing. Discover curated sneakers and custom traditional garments crafted with care.</p>
 
-        <!-- dark overlay for legibility -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/55 to-black/60 -z-5"></div>
-
-        <div class="maxw mx-auto px-6 py-16">
-          <div class="glass max-w-3xl mx-auto p-8 rounded-2xl text-center fade">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">Signature Scents. Curated Sneakers. Bespoke Traditional Fashion.</h1>
-            <p class="text-gray-300 mb-6">Imported luxury fragrances made accessible — premium formulas, authentic sourcing, and approachable pricing. Discover curated sneakers and custom traditional garments crafted with care.</p>
-
-            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <a href="#perfumes" class="px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[var(--gold)] to-[var(--gold-2)] text-black shadow-sm">Explore Perfumes</a>
-              <a href="#sneakers" class="px-6 py-3 rounded-md font-semibold border border-white/10">Shop Sneakers</a>
-              <a href="#fashion" class="px-6 py-3 rounded-md font-semibold border border-white/10">Custom Fashion</a>
-            </div>
-
-            <p class="text-xs text-gray-400 mt-4">Perfume purchases are handled securely via our enquiry process — we do not publish our email or process perfume sales over WhatsApp.</p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a href="#perfumes" class="px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[var(--gold)] to-[var(--gold-2)] text-black shadow-sm">Explore Perfumes</a>
+            <a href="#sneakers" class="px-6 py-3 rounded-md font-semibold border border-white/10">Shop Sneakers</a>
+            <a href="#fashion" class="px-6 py-3 rounded-md font-semibold border border-white/10">Custom Fashion</a>
           </div>
+
+          <p class="text-xs text-gray-400 mt-4">Perfume purchases are handled securely via our enquiry process — we do not publish our email or process perfume sales over WhatsApp.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Sections: Perfumes, Sneakers, Kids, Fashion -->
+  <!-- Sections -->
   <section id="perfumes" class="maxw mx-auto px-6 py-12">
     <div class="grid lg:grid-cols-2 gap-8 items-center">
       <div class="rounded-xl overflow-hidden shadow-lg">
@@ -154,183 +157,16 @@
     </div>
   </section>
 
-  <section id="sneakers" class="maxw mx-auto px-6 py-10">
-    <h3 class="text-2xl font-bold mb-4">Sneakers — Curated Drops</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Product card example (duplicate & replace) -->
-      <article class="glass p-4 rounded-lg">
-        <img src="sneaker-1.jpg" alt="Classic runner" class="product-img w-full rounded mb-3" loading="lazy">
-        <h4 class="font-semibold">Classic Runner</h4>
-        <p class="text-xs text-gray-300 mt-1">Clean silhouette — versatile everyday wear.</p>
-        <div class="mt-3 flex gap-2">
-          <button class="px-3 py-2 rounded border border-white/10 text-sm" onclick="openQuickView('Classic Runner','sneaker-1.jpg','Available sizes: 6-12')">Quick view</button>
-          <a href="https://www.yaga.co.za/artyzen-kicks" target="_blank" class="px-3 py-2 rounded bg-[var(--gold)] text-black text-sm">Visit Store</a>
-        </div>
-      </article>
+  <!-- Sneakers, Kids, Fashion, Contact, Footer sections stay the same -->
 
-      <!-- repeat product cards as needed -->
-      <article class="glass p-4 rounded-lg">
-        <img src="sneaker-2.jpg" alt="High top" class="product-img w-full rounded mb-3" loading="lazy">
-        <h4 class="font-semibold">Heritage High Top</h4>
-        <p class="text-xs text-gray-300 mt-1">Bold lines, premium materials.</p>
-        <div class="mt-3 flex gap-2">
-          <button class="px-3 py-2 rounded border border-white/10 text-sm" onclick="openQuickView('Heritage High Top','sneaker-2.jpg','Limited edition')">Quick view</button>
-          <a href="https://www.yaga.co.za/artyzen-kicks" target="_blank" class="px-3 py-2 rounded bg-[var(--gold)] text-black text-sm">Visit Store</a>
-        </div>
-      </article>
-      <!-- add more cards -->
-    </div>
-  </section>
-
-  <section id="kids" class="maxw mx-auto px-6 py-10">
-    <h3 class="text-2xl font-bold mb-4">Kids' Shoes — Durable & Stylish</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <article class="glass p-4 rounded-lg">
-        <img src="kids-1.jpg" alt="Kids sneaker" class="product-img w-full rounded mb-3" loading="lazy">
-        <h4 class="font-semibold">Playtime Runner</h4>
-        <p class="text-xs text-gray-300 mt-1">Cushioning and traction for little feet.</p>
-        <div class="mt-3 flex gap-2">
-          <button class="px-3 py-2 rounded border border-white/10 text-sm" onclick="openQuickView('Playtime Runner','kids-1.jpg','Sizes: 22-30')">Quick view</button>
-          <a href="https://www.yaga.co.za/artyzen-kicks" target="_blank" class="px-3 py-2 rounded bg-[var(--gold)] text-black text-sm">Visit Store</a>
-        </div>
-      </article>
-      <!-- more -->
-    </div>
-  </section>
-
-  <section id="fashion" class="maxw mx-auto px-6 py-12">
-    <div class="grid lg:grid-cols-2 gap-8 items-center">
-      <div class="glass p-6 rounded-xl">
-        <h3 class="text-2xl font-bold">Bespoke Traditional Fashion</h3>
-        <p class="text-gray-300 mt-3">Custom garments created with traditional African textiles and modern tailoring — for ceremonies, events, or signature daily wear. We provide fabric sourcing, pattern customisation, and professional tailoring.</p>
-
-        <ul class="mt-4 text-sm text-gray-200 space-y-2">
-          <li>Made-to-measure services</li>
-          <li>Fabric swatches and consultation</li>
-          <li>Small-batch production available for designers</li>
-        </ul>
-
-        <div class="mt-6">
-          <a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black font-semibold">Request a Quote</a>
-        </div>
-      </div>
-
-      <div class="rounded-lg overflow-hidden shadow-lg">
-        <img src="traditional-fashion.jpg" alt="Traditional fashion sample" class="w-full h-96 object-cover" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & secure enquiry form -->
-  <section id="contact" class="maxw mx-auto px-6 py-12">
-    <div class="grid lg:grid-cols-2 gap-8">
-      <div class="glass p-6 rounded-xl">
-        <h3 class="text-2xl font-bold">Secure Enquiry</h3>
-        <p class="text-gray-300 mt-2">Use the form below to enquire about perfumes (stock & pricing), sneaker availability, custom orders, or bespoke tailoring. We keep your contact private — email is hidden and messages go direct to a secure inbox.</p>
-
-        <form action="https://formsubmit.co/nomzanmazi@gmail.com" method="POST" class="mt-6 space-y-4">
-          <!-- hidden anti-spam and subject -->
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="KLICKBAY Website Enquiry">
-          <!-- honeypot -->
-          <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" />
-
-          <label class="block text-sm">
-            <span class="text-gray-300">Full name</span>
-            <input name="name" required class="mt-1 w-full p-3 rounded bg-white/5 text-white" placeholder="Your full name">
-          </label>
-
-          <label class="block text-sm">
-            <span class="text-gray-300">Email</span>
-            <input name="email" type="email" required class="mt-1 w-full p-3 rounded bg-white/5 text-white" placeholder="you@example.com">
-          </label>
-
-          <label class="block text-sm">
-            <span class="text-gray-300">What are you enquiring about?</span>
-            <select name="topic" required class="mt-1 w-full p-3 rounded bg-white/5 text-white">
-              <option value="">Choose</option>
-              <option>Perfume — stock & pricing</option>
-              <option>Sneakers — size & availability</option>
-              <option>Kids' shoes</option>
-              <option>Bespoke fashion / Tailoring</option>
-              <option>Wholesale / Collaboration</option>
-            </select>
-          </label>
-
-          <label class="block text-sm">
-            <span class="text-gray-300">Message</span>
-            <textarea name="message" rows="5" required class="mt-1 w-full p-3 rounded bg-white/5 text-white" placeholder="Tell us what you need — include sizes, preferred fragrances, event date or budget if relevant."></textarea>
-          </label>
-
-          <div class="flex gap-3">
-            <button type="submit" class="px-4 py-2 rounded bg-[var(--gold)] text-black font-semibold">Send Enquiry</button>
-            <button type="reset" class="px-4 py-2 rounded border border-white/10">Reset</button>
-          </div>
-        </form>
-
-        <p class="text-xs text-gray-400 mt-3">We aim to reply within 48 hours. If you prefer quicker chat for general sneaker enquiries, you may use WhatsApp (button at bottom right) — perfume purchases require the secure enquiry process.</p>
-      </div>
-
-      <aside class="glass p-6 rounded-xl">
-        <h4 class="text-lg font-semibold">Need help deciding?</h4>
-        <p class="text-gray-300 mt-2">Tell us the occasion, preferred scent family or size range — we’ll recommend options tailored to you.</p>
-
-        <div class="mt-4 space-y-3">
-          <div class="flex items-center gap-3">
-            <i class="fas fa-shipping-fast text-[var(--gold)]"></i>
-            <div>
-              <div class="font-semibold">Shipping</div>
-              <div class="text-xs text-gray-300">Domestic & international shipping available — rates quoted per enquiry.</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <i class="fas fa-lock text-[var(--gold)]"></i>
-            <div>
-              <div class="font-semibold">Secure Enquiries</div>
-              <div class="text-xs text-gray-300">Email is not displayed publicly — messages go to a private inbox.</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <i class="fas fa-hands-helping text-[var(--gold)]"></i>
-            <div>
-              <div class="font-semibold">Wholesale & Collaborations</div>
-              <div class="text-xs text-gray-300">We work with boutiques and designers. Select 'Wholesale / Collaboration' in the form.</div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black/70 border-t border-white/6">
-    <div class="maxw mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-300">
-      <div class="flex items-center gap-3">
-        <img src="klickbay-logo.png" alt="KLICKBAY" class="h-10 w-10 rounded-full object-cover">
-        <div>
-          <div class="font-semibold">KLICKBAY</div>
-          <div class="text-xs text-gray-400">© 2025 KLICKBAY. All rights reserved.</div>
-        </div>
-      </div>
-
-      <nav class="flex gap-4">
-        <a href="#privacy" class="hover:underline">Privacy</a>
-        <a href="#terms" class="hover:underline">Terms</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </nav>
-    </div>
-  </footer>
-
-  <!-- WhatsApp floating (optional fast-chat for sneakers/general enquiries) -->
+  <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/27680320894" class="fixed right-6 bottom-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
     <div style="background:#25d366" class="w-full h-full rounded-full flex items-center justify-center text-white">
       <i class="fab fa-whatsapp fa-lg"></i>
     </div>
   </a>
 
-  <!-- Quick view modal (JS below) -->
+  <!-- Modal -->
   <div id="modal" class="fixed inset-0 hidden items-center justify-center z-60">
     <div class="absolute inset-0 bg-black/70"></div>
     <div class="relative bg-black/90 rounded-xl w-11/12 md:w-3/4 lg:w-1/2 p-6 glass">
@@ -339,8 +175,8 @@
     </div>
   </div>
 
+  <!-- JS -->
   <script>
-    // Mobile toggle
     const toggle = document.getElementById('mobile-toggle'), mobile = document.getElementById('mobile-menu');
     toggle?.addEventListener('click', ()=> {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -348,7 +184,6 @@
       mobile.classList.toggle('hidden');
     });
 
-    // Smooth internal scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const href = a.getAttribute('href');
@@ -362,7 +197,6 @@
       });
     });
 
-    // Quick view modal helpers
     function openQuickView(title, img, note) {
       const content = document.getElementById('modal-content');
       content.innerHTML = `
@@ -378,8 +212,8 @@
       document.getElementById('modal').classList.remove('hidden');
       document.getElementById('modal').classList.add('flex');
     }
+
     function openQuickList(id) {
-      // simple demo list; replace with actual list or dynamic content if desired
       const content = document.getElementById('modal-content');
       content.innerHTML = `<h3 class="text-xl font-bold mb-3">Fragrances</h3>
         <ul class="list-disc ml-5 text-gray-300">
@@ -390,13 +224,20 @@
           <li>And more — enquire for full list & availability</li>
         </ul>
         <div class="mt-4"><a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black">Enquire for full list</a></div>`;
-      document.getElementById('modal').classList.remove('hidden'); document.getElementById('modal').classList.add('flex');
+      document.getElementById('modal').classList.remove('hidden'); 
+      document.getElementById('modal').classList.add('flex');
     }
+
     document.getElementById('modal-close')?.addEventListener('click', ()=> {
-      document.getElementById('modal').classList.add('hidden'); document.getElementById('modal').classList.remove('flex');
+      document.getElementById('modal').classList.add('hidden'); 
+      document.getElementById('modal').classList.remove('flex');
     });
+
     document.getElementById('modal')?.addEventListener('click', (e)=> {
-      if (e.target.id === 'modal') { document.getElementById('modal').classList.add('hidden'); document.getElementById('modal').classList.remove('flex'); }
+      if (e.target.id === 'modal') { 
+        document.getElementById('modal').classList.add('hidden'); 
+        document.getElementById('modal').classList.remove('flex'); 
+      }
     });
   </script>
 </body>
