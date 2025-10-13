@@ -35,13 +35,21 @@
       --gold-2:#b8892e;
       --muted:#cfcfcf;
     }
+
     html,body{height:100%}
-    body{
+
+    /* ✨ Body background — pearls, gold leaf & ocean wallpaper */
+    body {
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: #080808;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat, /* Ocean */
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5) 0%, transparent 70%), /* Pearl glow */
+        url('https://www.transparenttextures.com/patterns/gold-leaf.png'); /* Gold leaf texture */
       color: #F6F6F6;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      background-blend-mode: overlay, normal, lighten, multiply;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* Transparent glass effect */
@@ -61,18 +69,24 @@
     .maxw{max-width:1200px}
 
     /* Text shadow for readability */
-    h1, p { text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+    h1, h2, p { text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+
+    /* Card glow effect */
+    .gold-glow {
+      box-shadow: 0 0 10px rgba(212,175,55,0.5), 0 0 30px rgba(184,137,46,0.2);
+    }
   </style>
 </head>
+
 <body class="antialiased leading-relaxed">
 
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-black/60 backdrop-blur-sm border-b border-white/6">
     <div class="maxw mx-auto px-6 py-4 flex items-center justify-between gap-4">
       <a href="#home" class="flex items-center gap-3" aria-label="KLICKBAY Home">
-        <img src="klickbay-logo.png" alt="KLICKBAY logo" class="h-12 w-12 rounded-full object-cover shadow-sm">
+        <img src="klickbay-logo.png" alt="KLICKBAY logo" class="h-12 w-12 rounded-full object-cover shadow-sm gold-glow">
         <div>
-          <div class="text-lg font-extrabold tracking-tight">KLICKBAY</div>
+          <div class="text-lg font-extrabold tracking-tight text-yellow-300 drop-shadow-md">KLICKBAY</div>
           <div class="text-xs text-gray-300">Sneakers · Perfumes · Bespoke Traditional Fashion</div>
         </div>
       </a>
@@ -82,7 +96,7 @@
         <a href="#sneakers" class="hover:text-yellow-300 transition">Sneakers</a>
         <a href="#kids" class="hover:text-yellow-300 transition">Kids' Shoes</a>
         <a href="#fashion" class="hover:text-yellow-300 transition">Bespoke Fashion</a>
-        <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-2)] text-black px-4 py-2 rounded-lg shadow-sm font-semibold">Enquire</a>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--gold)] to-[var(--gold-2)] text-black px-4 py-2 rounded-lg shadow-sm font-semibold gold-glow">Enquire</a>
       </nav>
 
       <button id="mobile-toggle" class="md:hidden p-2 text-gray-200" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
@@ -104,19 +118,19 @@
   <main id="home" class="min-h-[70vh] flex items-center relative overflow-hidden">
     <picture class="absolute inset-0 -z-10">
       <source srcset="hero-large.jpg" media="(min-width:1024px)">
-      <img src="Gemini_Generated_Image_293u77293u77293u.png" alt="KLICKBAY hero" class="w-full h-[70vh] object-cover opacity-100" loading="lazy" />
+      <img src="Gemini_Generated_Image_293u77293u77293u.png" alt="KLICKBAY hero" class="w-full h-[70vh] object-cover opacity-90" loading="lazy" />
     </picture>
 
     <section class="w-full">
       <div class="maxw mx-auto px-6 py-16 text-center fade">
-        <div class="max-w-3xl mx-auto p-8 rounded-2xl">
-          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">Signature Scents. Curated Sneakers. Bespoke Traditional Fashion.</h1>
-          <p class="text-gray-300 mb-6">Imported luxury fragrances made accessible — premium formulas, authentic sourcing, and approachable pricing. Discover curated sneakers and custom traditional garments crafted with care.</p>
+        <div class="max-w-3xl mx-auto p-8 rounded-2xl backdrop-blur-md bg-black/30 gold-glow">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-yellow-300">Signature Scents. Curated Sneakers. Bespoke Traditional Fashion.</h1>
+          <p class="text-gray-200 mb-6">Imported luxury fragrances made accessible — premium formulas, authentic sourcing, and approachable pricing. Discover curated sneakers and custom traditional garments crafted with care.</p>
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <a href="#perfumes" class="px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[var(--gold)] to-[var(--gold-2)] text-black shadow-sm">Explore Perfumes</a>
-            <a href="#sneakers" class="px-6 py-3 rounded-md font-semibold border border-white/10">Shop Sneakers</a>
-            <a href="#fashion" class="px-6 py-3 rounded-md font-semibold border border-white/10">Custom Fashion</a>
+            <a href="#perfumes" class="px-6 py-3 rounded-md font-semibold bg-gradient-to-r from-[var(--gold)] to-[var(--gold-2)] text-black shadow-sm gold-glow">Explore Perfumes</a>
+            <a href="#sneakers" class="px-6 py-3 rounded-md font-semibold border border-white/10 text-white hover:bg-white/10">Shop Sneakers</a>
+            <a href="#fashion" class="px-6 py-3 rounded-md font-semibold border border-white/10 text-white hover:bg-white/10">Custom Fashion</a>
           </div>
 
           <p class="text-xs text-gray-400 mt-4">Perfume purchases are handled securely via our enquiry process</p>
@@ -125,43 +139,35 @@
     </section>
   </main>
 
-  <!-- Sections -->
+  <!-- PERFUMES SECTION -->
   <section id="perfumes" class="maxw mx-auto px-6 py-12">
     <div class="grid lg:grid-cols-2 gap-8 items-center">
-      <div class="rounded-xl overflow-hidden shadow-lg">
-        <img src=" Gemini_Generated_Image_7vpcmd7vpcmd7vpc-1.png " alt="Luxury perfumes collection" class="w-full h-96 object-cover" loading="lazy">
+      <div class="rounded-xl overflow-hidden shadow-lg gold-glow">
+        <img src="Gemini_Generated_Image_7vpcmd7vpcmd7vpc-1.png" alt="Luxury perfumes collection" class="w-full h-96 object-cover" loading="lazy">
       </div>
 
-      <div class="glass p-6 rounded-xl">
-        <h2 class="text-2xl font-bold">Imported Luxury Perfumes — Accessible Pricing</h2>
-        <p class="text-gray-300 mt-3">We source authentic, high-quality fragrances from trusted international suppliers and offer them in accessible price tiers. Each formulation is selected for longevity and true-to-original character.</p>
+      <div class="glass p-6 rounded-xl backdrop-blur-sm bg-black/40">
+        <h2 class="text-2xl font-bold text-yellow-300">Imported Luxury Perfumes — Accessible Pricing</h2>
+        <p class="text-gray-200 mt-3">We source authentic, high-quality fragrances from trusted international suppliers and offer them in accessible price tiers. Each formulation is selected for longevity and true-to-original character.</p>
 
-        <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200">
-          <li class="p-3 bg-white/3 rounded">
-            <strong>For Her</strong>
-            <div class="text-xs text-gray-300 mt-1">Warm gourmands, delicate florals and modern gourmand signatures.</div>
-          </li>
-          <li class="p-3 bg-white/3 rounded">
-            <strong>For Him</strong>
-            <div class="text-xs text-gray-300 mt-1">Refined fougères, woody orientals and crisp citrus accords.</div>
-          </li>
+        <ul class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-100">
+          <li class="p-3 bg-white/5 rounded"> <strong>For Her</strong> <div class="text-xs text-gray-300 mt-1">Warm gourmands, delicate florals and modern gourmand signatures.</div></li>
+          <li class="p-3 bg-white/5 rounded"> <strong>For Him</strong> <div class="text-xs text-gray-300 mt-1">Refined fougères, woody orientals and crisp citrus accords.</div></li>
         </ul>
 
         <div class="mt-6 flex gap-3">
-          <a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black font-semibold">Enquire About Perfumes</a>
-          <button onclick="openQuickList('perfume-list')" class="px-4 py-2 rounded border border-white/10">View Fragrance List</button>
+          <a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black font-semibold gold-glow">Enquire About Perfumes</a>
+          <button onclick="openQuickList('perfume-list')" class="px-4 py-2 rounded border border-white/10 text-white hover:bg-white/10">View Fragrance List</button>
         </div>
 
-        <p class="text-xs text-gray-400 mt-4">Available sizes: 30ml / 50ml / 100ml. For stock and sizing details, submit your enquiry — we reply personally with availability and shipping options.</p>
+        <p class="text-xs text-gray-400 mt-4">Available sizes: 30ml / 50ml / 100ml. Submit an enquiry — we reply personally with availability and pricing.</p>
       </div>
     </div>
   </section>
 
-  <!-- Sneakers, Kids, Fashion, Contact, Footer sections stay the same -->
-
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/27680320894" class="fixed right-6 bottom-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
-    <div style="background:#25d366" class="w-full h-full rounded-full flex items-center justify-center text-white">
+    <div style="background:#25d366" class="w-full h-full rounded-full flex items-center justify-center text-white gold-glow">
       <i class="fab fa-whatsapp fa-lg"></i>
     </div>
   </a>
@@ -169,7 +175,7 @@
   <!-- Modal -->
   <div id="modal" class="fixed inset-0 hidden items-center justify-center z-60">
     <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative bg-black/90 rounded-xl w-11/12 md:w-3/4 lg:w-1/2 p-6 glass">
+    <div class="relative bg-black/90 rounded-xl w-11/12 md:w-3/4 lg:w-1/2 p-6 glass gold-glow">
       <button id="modal-close" class="absolute top-4 right-4 text-gray-300"><i class="fas fa-times"></i></button>
       <div id="modal-content"></div>
     </div>
@@ -205,8 +211,8 @@
           <div>
             <h3 class="text-xl font-bold mb-2">${title}</h3>
             <p class="text-gray-300 mb-3">${note || ''}</p>
-            <p class="text-sm text-gray-300 mb-4">To purchase or check stock, click Enquire — we'll reply with availability, shipping & pricing.</p>
-            <a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black font-semibold">Enquire</a>
+            <p class="text-sm text-gray-300 mb-4">To purchase or check stock, click Enquire — we'll reply with availability & pricing.</p>
+            <a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black font-semibold gold-glow">Enquire</a>
           </div>
         </div>`;
       document.getElementById('modal').classList.remove('hidden');
@@ -215,15 +221,15 @@
 
     function openQuickList(id) {
       const content = document.getElementById('modal-content');
-      content.innerHTML = `<h3 class="text-xl font-bold mb-3">Fragrances</h3>
+      content.innerHTML = `<h3 class="text-xl font-bold mb-3 text-yellow-300">Fragrances</h3>
         <ul class="list-disc ml-5 text-gray-300">
           <li>Good Girl (Inspired) — sweet vanilla & jasmine</li>
           <li>Baccarat Rouge (Inspired) — amber & saffron</li>
           <li>Dior Sauvage (Inspired) — bergamot & pepper</li>
           <li>Chanel-style florals — powdery, classic</li>
-          <li>And more — enquire for full list & availability</li>
+          <li>And more — enquire for full list</li>
         </ul>
-        <div class="mt-4"><a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black">Enquire for full list</a></div>`;
+        <div class="mt-4"><a href="#contact" class="px-4 py-2 rounded bg-[var(--gold)] text-black gold-glow">Enquire for full list</a></div>`;
       document.getElementById('modal').classList.remove('hidden'); 
       document.getElementById('modal').classList.add('flex');
     }
