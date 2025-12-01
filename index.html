@@ -1,528 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Klickbay | Execute Your Style - Vintage Clothing, Sneakers & Exclusive Scents</title>
-    <meta name="description" content="Stop waiting, start wearing. Shop authentic, hand-vetted vintage apparel, high-end sneakers, and exclusive scents. Authenticity and hustle is the Klickbay brand.">
-    <meta name="keywords" content="vintage clothing, pre-loved apparel, sneakers, Klickbay, hustle, execution, original style, sustainable fashion, no excuses, limited stock, guaranteed authentic">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Custom Font Setup and GaryVee Inspired Palette */
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Inter:wght@300;400;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000; /* True Black for Ultimate Contrast */
-            color: #f7f3e8; /* Creamy White Text */
-        }
-        /* Using Oswald for the aggressive, condensed headline look */
-        .heading-font {
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: -0.05em; /* Tighter tracking for urgency */
-            text-transform: uppercase;
-        }
-        /* KLICKBAY Logo: Purple with Bright Orange Outline */
-        .klickbay-logo {
-            font-family: 'Oswald', sans-serif;
-            color: #8B5CF6; /* Bright Purple */
-            font-size: 2.5rem; 
-            font-weight: 900;
-            text-shadow: 
-                -1.5px -1.5px 0 #F97316, 
-                 1.5px -1.5px 0 #F97316, 
-                -1.5px  1.5px 0 #F97316, 
-                 1.5px  1.5px 0 #F97316; 
-            letter-spacing: 0.1em; /* Slight increase for visual punch */
-        }
-        /* H1 Title - Maximum Impact */
-        .h1-impact {
-            font-size: 5rem; /* 80px */
-            line-height: 0.9;
-        }
-        @media (min-width: 768px) {
-            .h1-impact {
-                font-size: 8rem; /* 128px */
-            }
-        }
-        
-        /* Primary GaryVee CTA Button Style */
-        .cta-button-primary {
-            background-color: #F97316; /* Bright Orange */
-            color: #000000;
-            transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
-            border: 2px solid #F97316;
-            font-weight: 900;
-            letter-spacing: 0.05em;
-        }
-        .cta-button-primary:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.9);
-            background-color: #fb923c;
-        }
-        
-        /* LLM Button Style (Purple for differentiation) */
-        .llm-button {
-            background-color: #8B5CF6; /* Bright Purple */
-            color: white;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-        .llm-button:hover {
-            background-color: #7C3AED;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.6);
-        }
-        
-        /* Utility for the aggressively framed image borders */
-        .hustle-frame {
-            border: 5px solid #F97316;
-            box-shadow: 0 0 30px rgba(139, 92, 246, 0.5); /* Purple inner glow */
-        }
-        /* Sales Banner for Scarcity */
-        .scarcity-banner {
-            background-color: #F97316; /* Orange */
-            color: #000000;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.9; transform: scaleX(1.005); }
-        }
-        
-        /* Spinner for loading */
-        .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            border-top: 4px solid #fff;
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            animation: spin 1s linear infinite;
-            margin-right: 8px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Contact Modal Styles */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); animation: fadeIn 0.3s; }
-        .modal-content { background-color: #0d0d0d; margin: 10vh auto; padding: 30px; border-radius: 16px; width: 90%; max-width: 500px; box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4); border: 3px solid #8B5CF6; }
-        .close { color: #f7f3e8; float: right; font-size: 32px; font-weight: bold; }
-        .close:hover, .close:focus { color: #F97316; text-decoration: none; cursor: pointer; }
-        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Klickbay | Execute Your Style - Vintage Clothing, Sneakers & Exclusive Scents</title>
+  <meta name="description" content="Stop waiting, start wearing. Shop authentic vintage apparel, premium sneakers and signature scents." />
+  <meta name="keywords" content="vintage clothing, sneakers, perfume, Klickbay" />
+
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    /* Fonts & palette */
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&family=Inter:wght@300;400;600;700&display=swap');
+
+    :root{
+      --black:#000000;
+      --cream:#f7f3e8;
+      --orange:#F97316;
+      --purple:#8B5CF6;
+    }
+
+    body{
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--cream);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .heading-font{ font-family:'Oswald',sans-serif; letter-spacing:-0.02em; text-transform:uppercase; }
+    .klickbay-logo{ font-family:'Oswald',sans-serif; color:var(--purple); font-weight:900; letter-spacing:0.08em; font-size:1.6rem; text-shadow: -1px -1px 0 var(--orange), 1px 1px 0 var(--orange); }
+    .cta-button-primary{
+      background:var(--orange); color:#000; border:2px solid var(--orange); font-weight:900;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .cta-button-primary:hover{ transform:scale(1.02); box-shadow:0 12px 30px rgba(249,115,22,.6); }
+
+    .llm-button{ background:var(--purple); color:#fff; font-weight:700; }
+    .llm-button:hover{ background:#7c3aed; }
+
+    /* frames and imagery */
+    .hustle-frame{ border:4px solid var(--orange); box-shadow:0 0 30px rgba(139,92,246,.35); overflow:hidden; border-radius:12px; }
+    img.lazy{ width:100%; height:100%; display:block; object-fit:contain; object-position:center; }
+
+    /* hero sizing */
+    .hero-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.7; filter:grayscale(.45); }
+
+    /* modal */
+    .modal{ display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,.85); align-items:center; justify-content:center; padding:2rem; }
+    .modal.open{ display:flex; }
+    .modal-content{ background:#0d0d0d; padding:1.75rem; border-radius:12px; width:100%; max-width:520px; border:3px solid var(--purple); box-shadow:0 12px 40px rgba(0,0,0,.8); }
+
+    /* small utilities */
+    .pill{ padding:.45rem .8rem; border-radius:999px; font-weight:800; }
+    .product-card img{ height:220px; object-fit:contain; }
+    @media (min-width:768px){
+      .h1-impact{ font-size:6.5rem; line-height:.9; }
+    }
+    @media (max-width:767px){
+      .h1-impact{ font-size:3.2rem; line-height:1; }
+    }
+
+    /* accessibility focus */
+    a:focus, button:focus, input:focus, select:focus, textarea:focus{ outline:3px solid rgba(249,115,22,.25); outline-offset:2px; }
+  </style>
 </head>
 <body class="antialiased">
-    <div class="scarcity-banner text-center py-2 font-extrabold heading-font text-lg z-50">
-        WARNING: VINTAGE MOVES FAST. <span class="text-purple-900">LIMITED STOCK. ZERO RESTOCK.</span> SECURE YOUR PIECE NOW!
+
+  <!-- Scarcity banner -->
+  <div class="bg-orange-500 text-black text-center py-2 font-extrabold heading-font text-sm">
+    WARNING: VINTAGE MOVES FAST — LIMITED STOCK. NO RESTOCKS. EXECUTE NOW.
+  </div>
+
+  <!-- header -->
+  <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm shadow-xl border-b border-purple-900">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="klickbay-logo">KLICKBAY</a>
+      <nav class="flex items-center space-x-4">
+        <a href="#apparel" class="hidden sm:inline heading-font text-sm hover:text-purple-400">APPAREL</a>
+        <a href="#sneakers" class="hidden sm:inline heading-font text-sm hover:text-purple-400">KICKS</a>
+        <a href="#perfume" class="hidden sm:inline heading-font text-sm hover:text-purple-400">SCENTS</a>
+
+        <button id="openContactModal" class="px-4 py-2 rounded-lg text-sm font-bold bg-purple-600 hover:bg-purple-700 heading-font">GET TO WORK</button>
+
+        <a href="https://wa.me/27680320894" target="_blank" aria-label="WhatsApp" class="text-green-500 text-2xl hover:text-green-400 ml-2">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </nav>
     </div>
-    <header class="sticky top-0 z-50 bg-black/95 backdrop-blur-sm shadow-xl border-b border-purple-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="klickbay-logo">KLICKBAY</a>
-            <nav class="space-x-4 flex items-center">
-                <a href="#apparel" class="text-sm font-medium hover:text-purple-400 transition hidden sm:inline heading-font">APPAREL</a>
-                <a href="#sneakers" class="text-sm font-medium hover:text-purple-400 transition hidden sm:inline heading-font">KICKS</a>
-                <a href="#perfume" class="text-sm font-medium hover:text-purple-400 transition hidden sm:inline heading-font">SCENTS</a>
-                
-                <button id="openContactModal" class="px-4 py-2 rounded-lg text-sm font-bold shadow-lg bg-purple-600 hover:bg-purple-700 transition heading-font">
-                    GET TO WORK
-                </button>
-                <a href="https://wa.me/27680320894" target="_blank" aria-label="WhatsApp Klickbay" 
-                   class="text-green-500 text-3xl hover:text-green-400 transition">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative h-[72vh] md:h-[85vh] flex items-center justify-center overflow-hidden">
+      <img src="girl WithPerfume2.jpg" alt="Hero" class="hero-image" onerror="this.src='https://placehold.co/1920x800/222222/ffffff?text=EXECUTION+STARTING+NOW'"/>
+      <div class="absolute inset-0 bg-black/55"></div>
+
+      <div class="z-10 text-center px-4 max-w-4xl">
+        <h1 class="heading-font h1-impact font-extrabold mb-4 text-white">STOP WAITING. <span class="text-orange-400">EXECUTE.</span></h1>
+        <p class="text-xl md:text-2xl mb-6 font-light text-gray-200">Curated vintage, hard-hitting scents and gear for people who do. No excuses — only execution.</p>
+        <div class="flex flex-col md:flex-row items-center gap-4 justify-center">
+          <a href="#apparel" class="inline-block px-8 py-3 text-lg font-bold rounded-xl cta-button-primary">GRAB VINTAGE</a>
+          <a href="#perfume" class="inline-block px-6 py-3 text-lg font-bold rounded-xl llm-button">FIND YOUR SCENT</a>
         </div>
-    </header>
-    <main>
-        <section class="relative h-[85vh] flex items-center justify-center overflow-hidden">
-            <img src="girl WithPerfume2.jpg" onerror="this.src='https://placehold.co/1920x800/222222/ffffff?text=EXECUTION+STARTING+NOW'" 
-                 alt="Couple in stylish vintage clothing, focused on the present moment" 
-                 class="absolute inset-0 w-full h-full **object-cover** opacity-75 grayscale-[50%]">
-            <div class="absolute inset-0 bg-black/60"></div>
-            
-            <div class="z-10 text-center px-4 max-w-5xl">
-                <h1 class="heading-font h1-impact font-extrabold mb-4 text-white">
-                    STOP WAITING. <span class="text-orange-400">EXECUTE.</span>
-                </h1>
-                <p class="text-xl md:text-3xl mb-8 font-light text-gray-200">
-                    Your style isn't a someday project. It's a statement you make right now. Curated pieces for people who move fast.
-                </p>
-                <a href="#apparel" class="inline-block px-12 py-4 text-xl font-bold rounded-xl shadow-2xl cta-button-primary">
-                    GRAB YOUR VINTAGE BEFORE IT'S GONE
-                </a>
-            </div>
-        </section>
+      </div>
+    </section>
 
-        <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="heading-font text-5xl text-center mb-16 font-bold text-purple-400 border-b-4 border-orange-500 inline-block px-4 pb-2">
-                THE CATEGORIES. NO EXCUSES.
-            </h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <a href="https://www.yaga.co.za/penthouse-cloud" target="_blank" id="apparel" class="group rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-purple-500/80 relative hustle-frame">
-                    <span class="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 font-extrabold text-sm heading-font z-10 rounded-bl-lg">ACT FAST</span>
-                    <img src="GirlWearingSneakers.jpg" onerror="this.src='https://placehold.co/600x400/4a007c/ffffff?text=VINTAGE+APPAREL'" 
-                         alt="Family focused on sustainable, pre-loved clothing" 
-                         class="w-full **h-96 object-cover** transition-opacity duration-300 group-hover:opacity-60">
-                    <div class="absolute inset-0 bg-black/50 flex items-end justify-start p-6">
-                        <h3 class="heading-font text-4xl font-extrabold text-white transition-colors duration-300 group-hover:text-orange-400">
-                            AUTHENTIC APPAREL
-                        </h3>
-                    </div>
-                </a>
-                <a href="#" id="sneakers" class="group rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-orange-500/80 relative hustle-frame">
-                    <span class="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 font-extrabold text-sm heading-font z-10 rounded-bl-lg">ACT FAST</span>
-                    <img src="GirlWearingConverseSneakers.jpg" onerror="this.src='https://placehold.co/600x400/F97316/000000?text=GRITTY+KICKS'" 
-                         alt="Pre-loved sneakers on pavement, ready for action" 
-                         class="w-full **h-96 object-cover** transition-opacity duration-300 group-hover:opacity-60">
-                    <div class="absolute inset-0 bg-black/50 flex items-end justify-start p-6">
-                        <h3 class="heading-font text-4xl font-extrabold text-white transition-colors duration-300 group-hover:text-purple-400">
-                            PRE-LOVED KICKS
-                        </h3>
-                    </div>
-                </a>
-                <a href="https://www.yaga.co.za/klickbay" target="_blank" id="perfume" class="group rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-purple-500/80 relative hustle-frame">
-                    <span class="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 font-extrabold text-sm heading-font z-10 rounded-bl-lg">ACT FAST</span>
-                    <img src="PerfumeByWindow.jpg" onerror="this.src='https://placehold.co/600x400/8B5CF6/ffffff?text=SCENT+OF+A+HUSTLER'" 
-                         alt="Luxury perfume bottle set, representing a signature statement" 
-                         class="w-full **h-96 object-cover** transition-opacity duration-300 group-hover:opacity-60">
-                    <div class="absolute inset-0 bg-black/50 flex items-end justify-start p-6">
-                        <h3 class="heading-font text-4xl font-extrabold text-white transition-colors duration-300 group-hover:text-orange-400">
-                            SIGNATURE SCENTS
-                        </h3>
-                    </div>
-                </a>
-            </div>
-        </section>
+    <!-- categories -->
+    <section class="py-12 max-w-7xl mx-auto px-4">
+      <h2 class="heading-font text-4xl text-center mb-8 text-purple-400">THE CATEGORIES. NO EXCUSES.</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a id="apparel" href="https://www.yaga.co.za/penthouse-cloud" class="group hustle-frame relative h-72 md:h-96 flex items-end">
+          <span class="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 font-extrabold text-xs heading-font rounded-bl-lg">ACT FAST</span>
+          <img loading="lazy" class="lazy w-full h-full object-contain" src="GirlWearingSneakers.jpg" alt="Vintage apparel" onerror="this.src='https://placehold.co/600x400/4a007c/ffffff?text=VINTAGE+APPAREL'"/>
+          <div class="absolute inset-0 bg-black/40 flex items-end">
+            <h3 class="heading-font text-2xl text-white p-6">AUTHENTIC APPAREL</h3>
+          </div>
+        </a>
 
-        <section class="bg-[#0f0f0f] py-16 md:py-24 border-t border-b border-orange-500/20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-start">
-                
-                <div class="space-y-6">
-                    <h2 class="heading-font text-5xl font-extrabold text-orange-400">LEAVE A TRAIL.</h2>
-                    <p class="text-xl font-light text-gray-300">
-                        The PS fragrances are not subtle. They are a signature. Not asking for permission; Demanding attention. This is your personal brand, bottled.
-                    </p>
-                    
-                    <div class="bg-black p-6 rounded-xl shadow-inner border border-purple-800 space-y-4">
-                        <h3 class="heading-font text-2xl font-bold text-purple-400 flex items-center">
-                            <i class="fas fa-bolt mr-2 text-orange-400"></i> AI EXECUTION: FIND YOUR SCENT
-                        </h3>
-                        <p class="text-sm text-gray-400">
-                            Tell our AI Curator the VIBE you're chasing (e.g., "The Closing Deal," "Monday Morning Hustle," "10X Energy").
-                        </p>
-                        <input type="text" id="moodInput" placeholder="Enter your high-energy vibe..." 
-                               class="w-full px-4 py-2 rounded-lg bg-gray-900 border border-purple-700 text-white focus:ring-orange-500 focus:border-orange-500">
-                        
-                        <button id="generateScentBtn" class="llm-button w-full py-3 font-bold rounded-lg uppercase tracking-wider">
-                            <span class="spinner hidden" id="loadingSpinner"></span>
-                            <span>EXECUTE SCENT GENERATION</span>
-                        </button>
-                        <div id="scentResult" class="mt-4 p-4 bg-purple-900/30 border-l-4 border-orange-500 rounded-lg text-gray-200 min-h-[4rem]">
-                            <p class="text-sm italic text-gray-400">The result will tell you exactly what scent notes match your ambition. Then you have to execute the purchase to own the signature. No thinking, just doing.</p>
-                        </div>
-                    </div>
-                    <p class="pt-4 text-gray-400">
-                        Don't just talk about having a signature. Go get one. 
-                    </p>
-                    <a href="https://www.yaga.co.za/klickbay" target="_blank" class="inline-flex items-center px-8 py-3 font-semibold rounded-full bg-purple-600 text-white hover:bg-purple-700 shadow-lg transition tracking-wide heading-font">
-                        COMMIT TO PURCHASE NOW
-                    </a>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-2xl hustle-frame sticky top-24">
-                    <img src="CleavagePerfume.jpg" onerror="this.src='https://placehold.co/800x600/F97316/ffffff?text=SCENT+OF+EXECUTION'" 
-                         alt="Close up shot of the signature luxury perfume bottle, focused and intense" class="w-full **h-[30rem] object-cover** rounded-xl">
-                </div>
-            </div>
-        </section>
+        <a id="sneakers" href="#" class="group hustle-frame relative h-72 md:h-96 flex items-end">
+          <span class="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 font-extrabold text-xs heading-font rounded-bl-lg">ACT FAST</span>
+          <img loading="lazy" class="lazy w-full h-full object-contain" src="GirlWearingConverseSneakers.jpg" alt="Kicks" onerror="this.src='https://placehold.co/600x400/F97316/000000?text=PRE-LOVED+KICKS'"/>
+          <div class="absolute inset-0 bg-black/40 flex items-end">
+            <h3 class="heading-font text-2xl text-white p-6">PRE-LOVED KICKS</h3>
+          </div>
+        </a>
 
-        <section class="py-16 bg-black">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="heading-font text-4xl text-center mb-10 font-bold text-orange-400">
-                    BEST SELLING SCENTS: THE EXECUTIONER'S PICKS
-                </h2>
-                <div class="grid md:grid-cols-2 gap-10">
-                    <div class="bg-[#0f0f0f] p-6 rounded-xl border border-purple-800 shadow-xl">
-                        <h3 class="heading-font text-3xl font-bold mb-4 text-white border-b border-orange-500/50 pb-2">MEN'S HUSTLE CODES</h3>
-                        <div class="flex flex-wrap gap-4 text-2xl font-extrabold heading-font">
-                            <span class="px-4 py-2 bg-purple-600 rounded-lg shadow-md">M04</span>
-                            <span class="px-4 py-2 bg-purple-600 rounded-lg shadow-md">M16</span>
-                            <span class="px-4 py-2 bg-purple-600 rounded-lg shadow-md">M19</span>
-                            <span class="px-4 py-2 bg-purple-600 rounded-lg shadow-md">M32</span>
-                            <span class="px-4 py-2 bg-purple-600 rounded-lg shadow-md">M46</span>
-                        </div>
-                    </div>
-                    <div class="bg-[#0f0f0f] p-6 rounded-xl border border-orange-800 shadow-xl">
-                        <h3 class="heading-font text-3xl font-bold mb-4 text-white border-b border-purple-500/50 pb-2">LADIES' AMBITION CODES</h3>
-                        <div class="flex flex-wrap gap-4 text-2xl font-extrabold heading-font">
-                            <span class="px-4 py-2 bg-orange-600 rounded-lg shadow-md">L11</span>
-                            <span class="px-4 py-2 bg-orange-600 rounded-lg shadow-md">L19</span>
-                            <span class="px-4 py-2 bg-orange-600 rounded-lg shadow-md">L24</span>
-                            <span class="px-4 py-2 bg-orange-600 rounded-lg shadow-md">L13</span>
-                            <span class="px-4 py-2 bg-orange-600 rounded-lg shadow-md">L33</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="heading-font text-5xl text-center mb-12 font-bold text-white">THE ONLY SUSTAINABLE HUSTLE.</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 order-2 md:order-1">
-                    <p class="text-xl font-light text-gray-300">
-                        Pre-loved is not 'used.' It's authenticated history. You're not saving money; you're gaining originality. Stop chasing trends and own a piece of certified authentic grit. This is the truth of fashion.
-                    </p>
-                    <a href="#" class="inline-block px-8 py-3 font-extrabold rounded-lg text-black bg-white hover:bg-gray-200 transition shadow-md heading-font">
-                        BUY THE KICKS. NO DELAYS.
-                    </a>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-2xl hustle-frame order-1 md:order-2">
-                    <img src="SkateboardSneaker.jpg" onerror="this.src='https://placehold.co/800x500/F97316/000000?text=PRE-LOVED+IS+AUTHENTIC'" 
-                         alt="High-quality photo of pre-loved sneakers with a skateboard, urban action style" 
-                         class="w-full **h-[30rem] object-cover** rounded-xl">
-                </div>
-            </div>
-        </section>
+        <a id="perfume" href="#perfumeSection" class="group hustle-frame relative h-72 md:h-96 flex items-end">
+          <span class="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 font-extrabold text-xs heading-font rounded-bl-lg">ACT FAST</span>
+          <img loading="lazy" class="lazy w-full h-full object-contain" src="PerfumeByWindow.jpg" alt="Scents" onerror="this.src='https://placehold.co/600x400/8B5CF6/ffffff?text=SCENT+OF+A+HUSTLER'"/>
+          <div class="absolute inset-0 bg-black/40 flex items-end">
+            <h3 class="heading-font text-2xl text-white p-6">SIGNATURE SCENTS</h3>
+          </div>
+        </a>
+      </div>
+    </section>
 
-        <section class="bg-purple-900/30 py-16 border-t-4 border-orange-500">
-            <div class="max-w-4xl mx-auto text-center px-4">
-                <h2 class="heading-font text-4xl font-extrabold text-white mb-4">
-                    THE NEXT LEVEL: <span class="text-orange-400">HELPBANK</span>
-                </h2>
-                <p class="text-xl text-gray-200 mb-6">
-                    Maximize your personal and financial execution. Helpbank provides the tools and strategy you need to move beyond theory into tangible results. Turn ambition into action.
-                </p>
-                <a href="YOUR_REFERRAL_LINK_HERE" target="_blank" class="inline-block px-10 py-4 text-2xl font-black rounded-xl shadow-2xl llm-button hover:bg-purple-700">
-                    EXECUTE YOUR FUTURE WITH HELPBANK
-                </a>
-            </div>
-        </section>
+    <!-- scent finder -->
+    <section id="perfumeSection" class="py-12 bg-[#0f0f0f] border-t border-b border-orange-500/20">
+      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="heading-font text-4xl text-orange-400 mb-4">LEAVE A TRAIL — SCENT FINDER</h2>
+          <p class="text-gray-300 mb-6">Answer simple preferences and we'll recommend one of the PS fragrance codes that matches your vibe. Real talk, one result — then you act.</p>
 
-        <section class="bg-purple-900/20 py-12 border-t-4 border-orange-500">
-            <div class="max-w-4xl mx-auto text-center px-4">
-                <h2 class="heading-font text-4xl font-extrabold text-orange-400 mb-4">
-                    AUTHENTICITY IS NON-NEGOTIABLE.
-                </h2>
-                <p class="text-xl text-gray-200 mb-6">
-                    Every single piece is hand-vetted. If it's not 100% real, we don't move it. You invest in quality; we guarantee the truth.
-                </p>
-                <a href="#apparel" class="inline-block px-10 py-4 text-2xl font-black rounded-xl shadow-2xl cta-button-primary">
-                    LOCK IN YOUR PURCHASE NOW
-                </a>
+          <form id="scentForm" class="space-y-4 bg-black p-6 rounded-xl border border-purple-800">
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Gender / Type</label>
+              <select id="gender" class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white">
+                <option value="unisex">Unisex</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
             </div>
-        </section>
-    </main>
-    <footer class="bg-black border-t border-orange-900 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-            <div class="flex justify-center space-x-6 mb-4 heading-font text-sm">
-                <button id="openContactModalFooter" class="hover:text-orange-500 transition">BUSINESS. NO FLUFF.</button>
-                <a href="#" class="hover:text-orange-500 transition">T'S & C'S</a>
+
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Strength</label>
+              <select id="strength" class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white">
+                <option value="light">Light / Fresh</option>
+                <option value="moderate">Moderate</option>
+                <option value="base">Heavy / Base</option>
+              </select>
             </div>
-            
-            <p class="text-sm mb-2 heading-font">
-                &copy; 2025 KLICKBAY Store. EXECUTE.
-            </p>
-            <p class="text-xs font-medium text-gray-600">
-                Systems running 100%. Keep grinding.
-            </p>
+
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Scent Family</label>
+              <select id="family" class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white">
+                <option value="woody">Woody</option>
+                <option value="citrus">Citrus / Fresh</option>
+                <option value="oriental">Oriental / Warm</option>
+                <option value="aromatic">Aromatic / Spicy</option>
+                <option value="aquatic">Aquatic / Clean</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Mood / Use</label>
+              <select id="mood" class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white">
+                <option value="daily">Daily / Work</option>
+                <option value="date">Date / Close</option>
+                <option value="night">Night / Club</option>
+                <option value="power">Power / Meetings</option>
+                <option value="relax">Relax / Weekend</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-400 mb-1">Optional — preferred note (comma separated)</label>
+              <input id="notes" type="text" placeholder="e.g. vanilla, bergamot, sandalwood" class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white" />
+            </div>
+
+            <div class="flex gap-3">
+              <button type="button" id="findScent" class="llm-button px-4 py-3 rounded font-bold heading-font">FIND MY CODE</button>
+              <button type="button" id="resetScent" class="px-4 py-3 rounded bg-gray-800 border border-gray-700">RESET</button>
+            </div>
+
+            <div id="scentOutput" class="mt-4 p-4 bg-purple-900/20 border-l-4 border-orange-500 rounded text-gray-200 min-h-[3.5rem]">
+              <p class="italic text-gray-400">No selection yet. Choose your vibe, then press FIND MY CODE.</p>
+            </div>
+
+            <div id="scentActions" class="hidden mt-4 space-y-2">
+              <a id="buyLink" href="https://www.yaga.co.za/klickbay" target="_blank" class="inline-block w-full py-2 text-sm font-black rounded-lg text-black bg-orange-400 hover:bg-orange-300 transition heading-font">ACT ON THIS. BUY NOW</a>
+              <button id="sendEnquiryBtn" type="button" class="w-full py-2 rounded-lg cta-button-primary font-bold heading-font">SEND ENQUIRY ABOUT THIS FRAGRANCE</button>
+            </div>
+          </form>
+
+          <p class="text-gray-400 mt-4">If you want us to handle it, hit SEND ENQUIRY and we'll get back. No email address is exposed on this page.</p>
         </div>
-    </footer>
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeContactModal">&times;</span>
-            <h3 class="heading-font text-3xl font-bold mb-6 text-orange-400">BUSINESS: CONTACT US</h3>
-            <p class="text-gray-300 mb-6">If you have a serious query, fill this out. We respect your time. Be direct.</p>
-            
-            <form id="queryForm">
-                <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium text-gray-400 mb-1">Your Name</label>
-                    <input type="text" id="name" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-purple-500 focus:border-purple-500">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium text-gray-400 mb-1">Your Email</label>
-                    <input type="email" id="email" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-purple-500 focus:border-purple-500">
-                </div>
-                <div class="mb-6">
-                    <label for="message" class="block text-sm font-medium text-gray-400 mb-1">Your Query (Be Concise)</label>
-                    <textarea id="message" rows="4" required class="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:ring-purple-500 focus:border-purple-500"></textarea>
-                </div>
-                <button type="submit" class="w-full py-3 font-bold rounded-lg cta-button-primary uppercase tracking-wider heading-font">
-                    SEND QUERY. GET ANSWERS.
-                </button>
-            </form>
-            <p class="text-center text-sm mt-6 text-gray-500">
-                — OR —
-                <a href="https://wa.me/27680320894" target="_blank" class="text-green-500 hover:text-green-400 ml-2 font-semibold">
-                    <i class="fab fa-whatsapp text-2xl"></i> CHAT. NO TIME WASTED.
-                </a>
-            </p>
+
+        <div class="hustle-frame rounded-xl p-0 overflow-hidden">
+          <img loading="lazy" src="CleavagePerfume.jpg" alt="Perfume bottle" class="lazy w-full h-[28rem] object-contain" onerror="this.src='https://placehold.co/800x600/F97316/ffffff?text=SCENT+OF+EXECUTION'"/>
         </div>
+      </div>
+    </section>
+
+    <!-- best picks -->
+    <section class="py-12 bg-black">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="heading-font text-3xl text-orange-400 mb-6">BEST SELLING SCENTS — THE EXECUTIONER'S PICKS</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-[#0f0f0f] p-6 rounded-xl border border-purple-800">
+            <h3 class="heading-font text-2xl mb-3">MEN'S HUSTLE CODES</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="pill bg-purple-600">M04</span>
+              <span class="pill bg-purple-600">M16</span>
+              <span class="pill bg-purple-600">M19</span>
+              <span class="pill bg-purple-600">M32</span>
+              <span class="pill bg-purple-600">M46</span>
+            </div>
+          </div>
+
+          <div class="bg-[#0f0f0f] p-6 rounded-xl border border-orange-800">
+            <h3 class="heading-font text-2xl mb-3">LADIES' AMBITION CODES</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="pill bg-orange-600">L11</span>
+              <span class="pill bg-orange-600">L19</span>
+              <span class="pill bg-orange-600">L24</span>
+              <span class="pill bg-orange-600">L13</span>
+              <span class="pill bg-orange-600">L33</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Helpbnk + 4AKID Products -->
+    <section class="py-12 bg-purple-900/20 border-t-4 border-orange-500">
+      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h3 class="heading-font text-3xl text-white mb-3">THE NEXT LEVEL: <span class="text-orange-400">HELPBANK</span></h3>
+          <p class="text-gray-200 mb-4">Tools to turn ambition into capital. No fluff — only moves. Join with our referral and get started.</p>
+          <a href="https://helpbnk.com/register?referredBy=4yJrb2k8GMdWLDX" target="_blank" class="inline-block px-6 py-3 llm-button rounded font-bold heading-font">EXECUTE YOUR FUTURE WITH HELPBANK</a>
+        </div>
+
+        <div class="bg-black p-4 rounded-xl border border-purple-800">
+          <h4 class="heading-font text-xl text-orange-400 mb-3">FOR MOMS & BABIES — 4AKID</h4>
+          <p class="text-gray-200 mb-3">Practical gear that performs. Use code <span class="font-bold">KlickbayDiscount</span> for 10% off at checkout.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- product 1 -->
+            <div class="product-card bg-[#0f0f0f] p-3 rounded">
+              <img loading="lazy" src="ToddlerCarSeat_Black.jpg" alt="Toddler car seat" onerror="this.src='https://placehold.co/400x300/222222/ffffff?text=Car+Seat'" class="w-full rounded" />
+              <div class="mt-2 text-sm">
+                <div class="font-bold">Toddler Car Seat — Black</div>
+                <div class="text-gray-400">Price: R5,500</div>
+                <a href="https://4akid.co.za/?ref=hewclvpx" target="_blank" class="mt-2 inline-block w-full py-2 text-center rounded bg-orange-400 text-black font-bold">BUY — APPLY CODE</a>
+              </div>
+            </div>
+
+            <!-- product 2 -->
+            <div class="product-card bg-[#0f0f0f] p-3 rounded">
+              <img loading="lazy" src="Baby cam 1.3mp.jpeg" alt="Baby cam" onerror="this.src='https://placehold.co/400x300/222222/ffffff?text=Baby+Cam'" class="w-full rounded" />
+              <div class="mt-2 text-sm">
+                <div class="font-bold">Baby Cam 1.3MP</div>
+                <div class="text-gray-400">Price: R997</div>
+                <a href="https://4akid.co.za/?ref=hewclvpx" target="_blank" class="mt-2 inline-block w-full py-2 text-center rounded bg-orange-400 text-black font-bold">BUY — APPLY CODE</a>
+              </div>
+            </div>
+
+            <!-- product 3 -->
+            <div class="product-card bg-[#0f0f0f] p-3 rounded">
+              <img loading="lazy" src="WoodenCanvasBabySwingwithCushionforIndoorandOutdoorSwings-12.jpg" alt="Baby swing" onerror="this.src='https://placehold.co/400x300/222222/ffffff?text=Baby+Swing'" class="w-full rounded" />
+              <div class="mt-2 text-sm">
+                <div class="font-bold">Wooden Canvas Baby Swing</div>
+                <div class="text-gray-400">Price: R799</div>
+                <a href="https://4akid.co.za/?ref=hewclvpx" target="_blank" class="mt-2 inline-block w-full py-2 text-center rounded bg-orange-400 text-black font-bold">BUY — APPLY CODE</a>
+              </div>
+            </div>
+
+            <!-- product 4 -->
+            <div class="product-card bg-[#0f0f0f] p-3 rounded">
+              <img loading="lazy" src="Electric-Skateboard-4aKid-7033.jpeg" alt="Electric skateboard" onerror="this.src='https://placehold.co/400x300/222222/ffffff?text=Skateboard'" class="w-full rounded" />
+              <div class="mt-2 text-sm">
+                <div class="font-bold">Electric Skateboard</div>
+                <div class="text-gray-400">Price: R6,500</div>
+                <a href="https://4akid.co.za/?ref=hewclvpx" target="_blank" class="mt-2 inline-block w-full py-2 text-center rounded bg-orange-400 text-black font-bold">BUY — APPLY CODE</a>
+              </div>
+            </div>
+
+            <!-- product 5 -->
+            <div class="product-card bg-[#0f0f0f] p-3 rounded">
+              <img loading="lazy" src="turquoise-compact-fold-high-chair-4akid-1.jpeg" alt="High chair" onerror="this.src='https://placehold.co/400x300/222222/ffffff?text=High+Chair'" class="w-full rounded" />
+              <div class="mt-2 text-sm">
+                <div class="font-bold">Compact Fold High Chair — Turquoise</div>
+                <div class="text-gray-400">Price: R1,300</div>
+                <a href="https://4akid.co.za/?ref=hewclvpx" target="_blank" class="mt-2 inline-block w-full py-2 text-center rounded bg-orange-400 text-black font-bold">BUY — APPLY CODE</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- authenticity -->
+    <section class="py-10 bg-purple-900/20 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <h3 class="heading-font text-2xl text-white mb-2">AUTHENTICITY IS NON-NEGOTIABLE</h3>
+        <p class="text-gray-200">Every single piece is hand-vetted. If it's not 100% real, we don't move it. You invest in quality; we guarantee the truth.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="bg-black border-t border-orange-900 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-gray-500">
+      <div class="flex justify-center space-x-6 mb-4 heading-font text-sm">
+        <button id="openContactModalFooter" class="hover:text-orange-500 transition">BUSINESS. NO FLUFF.</button>
+        <a href="#" class="hover:text-orange-500 transition">T'S & C'S</a>
+      </div>
+      <p class="text-sm mb-2 heading-font">&copy; 2025 KLICKBAY Store. EXECUTE.</p>
+      <p class="text-xs font-medium text-gray-600">Systems running 100%. Keep grinding.</p>
     </div>
-    <script>
-        // --- GEMINI API INTEGRATION START ---
-        // The API Key has been intentionally left blank for security/demonstration purposes.
-        const apiKey = ""; 
-        const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
+  </footer>
 
-        (function() {
-            // Helper for exponential backoff retry logic (encapsulated)
-            async function fetchWithBackoff(url, options, maxRetries = 5) {
-                for (let i = 0; i < maxRetries; i++) {
-                    try {
-                        const response = await fetch(url, options);
-                        if (response.status !== 429 && response.ok) {
-                            return response;
-                        }
-                        if (response.status === 429 || !response.ok) {
-                            const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                            continue;
-                        }
-                    } catch (error) {
-                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        continue;
-                    }
-                }
-                throw new Error('API request failed after multiple retries.');
-            }
+  <!-- contact modal -->
+  <div id="contactModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeContactModal" class="text-gray-300 float-right text-xl">&times;</button>
+      <h3 class="heading-font text-2xl text-orange-400 mb-2">BUSINESS: CONTACT US</h3>
+      <p class="text-gray-300 mb-4">If you have a serious query, fill this out. We respect time. Be direct.</p>
 
-            async function generateScentProfile() {
-                const moodInput = document.getElementById('moodInput').value.trim();
-                const resultDiv = document.getElementById('scentResult');
-                const button = document.getElementById('generateScentBtn');
-                const spinner = document.getElementById('loadingSpinner');
+      <form id="queryForm">
+        <div class="mb-3">
+          <label class="block text-sm text-gray-400 mb-1">Your Name</label>
+          <input id="q_name" required class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white" />
+        </div>
+        <div class="mb-3">
+          <label class="block text-sm text-gray-400 mb-1">Your Email</label>
+          <input id="q_email" type="email" required class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm text-gray-400 mb-1">Your Query</label>
+          <textarea id="q_message" rows="4" required class="w-full px-3 py-2 rounded bg-gray-900 border border-gray-700 text-white"></textarea>
+        </div>
 
-                if (!moodInput) {
-                    resultDiv.innerHTML = '<p class="text-sm text-red-400">WARNING: You must enter a high-energy VIBE to proceed. Zero input, zero results.</p>';
-                    return;
-                }
-                if (!apiKey) {
-                    resultDiv.innerHTML = '<p class="text-sm text-red-400">API ERROR: The API Key is missing. Execution requires a key.</p>';
-                    return;
-                }
+        <button type="submit" class="w-full py-3 rounded cta-button-primary font-bold heading-font">SEND QUERY. GET ANSWERS.</button>
+      </form>
 
-                // UI state: Loading
-                button.disabled = true;
-                spinner.classList.remove('hidden');
-                button.innerHTML = '<span class="spinner"></span> ANALYZING HUSTLE...';
-                resultDiv.innerHTML = '<p class="text-sm italic text-gray-400">The Curator is locking onto your ambition. Standby for execution...</p>';
-                
-                // System instruction sets the GaryVee-flavored LLM's persona
-                const systemPrompt = "You are Klickbay's ruthless, no-nonsense Fragrance Curator. Your tone must be direct, aggressive, and focused on ambition, hustle, and execution, mirroring a high-achiever mindset. Respond to the user's style/mood with a CONCISE, SINGLE paragraph scent profile recommendation that validates their drive. Use words like 'EXECUTION', 'HUSTLE', 'AMBITION', '10X'. Do not use flowery language, markdown headers, or lists. Focus only on the description.";
-                
-                // User query
-                const userQuery = `Generate a scent profile recommendation for the mood/style: "${moodInput}". The scents are: M04, M16, M19, M32, M46 for men and L11, L19, L24, L13, L33 for ladies. Recommend one of these codes and justify it with the mood.`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: { parts: [{ text: systemPrompt }] }
-                };
+      <p class="text-center text-sm mt-4 text-gray-500">— OR — <a href="https://wa.me/27680320894" target="_blank" class="text-green-400 font-semibold"><i class="fab fa-whatsapp"></i> CHAT ON WHATSAPP</a></p>
+    </div>
+  </div>
 
-                try {
-                    const response = await fetchWithBackoff(`${API_URL}?key=${apiKey}`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
+  <!-- SCRIPTS -->
+  <script defer>
+    // ---------- Utilities ----------
+    function el(id){ return document.getElementById(id); }
+    function show(elm){ elm.classList.remove('hidden'); elm.classList.add('block'); }
+    function hide(elm){ elm.classList.add('hidden'); }
 
-                    const result = await response.json();
-                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+    // ---------- Modal ----------
+    const modal = el('contactModal');
+    const openBtn = el('openContactModal');
+    const openBtnFooter = el('openContactModalFooter');
+    const closeModalBtn = el('closeContactModal');
 
-                    if (text) {
-                        // Update result description to emphasize action/purchase after the AI output
-                        resultDiv.innerHTML = `<p class="font-bold text-lg text-orange-400 mb-2">RESULT: NOW EXECUTE.</p><p class="font-medium mb-4">${text}</p><a href="https://www.yaga.co.za/gasd-up" target="_blank" class="inline-block w-full py-2 text-sm font-black rounded-lg text-black bg-orange-400 hover:bg-orange-300 transition heading-font">ACT ON THIS INTEL. BUY YOUR SIGNATURE.</a>`;
-                    } else {
-                        resultDiv.innerHTML = '<p class="text-red-400">ERROR: Network failure. Try reloading and EXECUTE again.</p>';
-                    }
-                } catch (error) {
-                    console.error("Gemini API Error:", error);
-                    resultDiv.innerHTML = `<p class="text-red-400">FATAL ERROR: Failed to reach the server after multiple retries. Time to pivot and retry.</p>`;
-                } finally {
-                    // UI state: Restore
-                    button.disabled = false;
-                    spinner.classList.add('hidden');
-                    button.innerHTML = 'EXECUTE SCENT GENERATION';
-                }
-            }
-            
-            // Event listener for the LLM button
-            document.addEventListener('DOMContentLoaded', () => {
-                const generateBtn = document.getElementById('generateScentBtn');
-                if (generateBtn) {
-                    generateBtn.addEventListener('click', generateScentProfile);
-                }
-            });
-        })(); 
-        // --- GEMINI API INTEGRATION END ---
-        
-        // --- ORIGINAL JS FOR MODAL/CONTACT START ---
-        const modal = document.getElementById("contactModal");
-        const openBtn = document.getElementById("openContactModal");
-        const openBtnFooter = document.getElementById("openContactModalFooter");
-        const closeBtn = document.getElementById("closeContactModal");
-        const form = document.getElementById("queryForm");
+    function openModal(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
+    function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+    openBtn?.addEventListener('click', openModal);
+    openBtnFooter?.addEventListener('click', openModal);
+    closeModalBtn?.addEventListener('click', closeModal);
+    window.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 
-        const openModal = () => {
-            modal.style.display = "block";
-        }
+    // ---------- Obfuscated target email ----------
+    // Email not presented in HTML. It's base64 encoded and decoded at runtime.
+    const encodedEmail = "bm9temFuYW1hemlAZ21haWwuY29t"; // base64 for nomzanmazi@gmail.com
+    function decodeEmail(enc){ try{ return atob(enc); }catch(e){ return ''; } }
+    const targetEmail = decodeEmail(encodedEmail);
 
-        const closeModal = () => {
-            modal.style.display = "none";
-        }
+    // ---------- Query form submission (modal) ----------
+    const queryForm = el('queryForm');
+    queryForm?.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = encodeURIComponent(el('q_name').value.trim());
+      const email = encodeURIComponent(el('q_email').value.trim());
+      const message = encodeURIComponent(el('q_message').value.trim());
 
-        openBtn.onclick = openModal;
-        openBtnFooter.onclick = openModal;
-        closeBtn.onclick = closeModal;
+      const subject = encodeURIComponent(`High-Value Klickbay Query from ${decodeURIComponent(name)}`);
+      const body = encodeURIComponent(`Name: ${decodeURIComponent(name)}\nUser Email: ${decodeURIComponent(email)}\n\nQuery:\n${decodeURIComponent(message)}\n\n--- Sent from Klickbay Website Form. EXECUTE FOLLOW-UP.`);
 
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
+      // open user's mail client
+      const mailto = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+      // small feedback toast
+      const toast = document.createElement('div');
+      toast.className = 'fixed top-5 right-5 bg-green-600 text-white p-4 rounded-lg shadow-xl z-[2000] heading-font';
+      toast.innerText = 'QUERY EXECUTED. Your mail client is opening...';
+      document.body.appendChild(toast);
+      setTimeout(()=>toast.remove(),4000);
+      closeModal();
+    });
 
-            // Target email address for the form submission
-            const targetEmail = "nomzanmazi@gmail.com";
-            
-            const subject = encodeURIComponent(`High-Value Klickbay Query from ${name}`);
-            const body = encodeURIComponent(`Name: ${name}\nUser Email: ${email}\n\nQuery:\n${message}\n\n--- Sent from Klickbay Website Form. EXECUTE FOLLOW-UP.`);
-            
-            const mailtoLink = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
-            
-            window.location.href = mailtoLink;
+    // ---------- Scent finder local matching logic ----------
+    // Minimal in-browser map of PS codes to descriptors (you can expand this mapping).
+    const perfumeDB = {
+      // MEN examples
+      'M04': {code:'M04', label:'Dior Sauvage - Raw Citrus & Ambition', gender:'male', family:'citrus', strength:'moderate', notes:['bergamot','pepper']},
+      'M16': {code:'M16', label:'Barakkat Rouge — Deep Warm Wood', gender:'male', family:'woody', strength:'base', notes:['sandalwood','amber']},
+      'M19': {code:'M19', label:'Dunhill Desire — Smooth Orient', gender:'male', family:'oriental', strength:'moderate', notes:['vanilla','tonka']},
+      'M32': {code:'M32', label:'Black XS — Urban Night', gender:'male', family:'aromatic', strength:'base', notes:['cardamom','leather']},
+      'M46': {code:'M46', label:'Armani — Strong Presence', gender:'male', family:'woody', strength:'base', notes:['patchouli','cedar']},
 
-            // Simple message box feedback
-            const feedbackMessage = document.createElement('div');
-            feedbackMessage.innerHTML = `<div class="fixed top-5 right-5 bg-green-600 text-white p-4 rounded-lg shadow-xl z-[1001] transition-opacity duration-500 heading-font">
-                                            QUERY EXECUTED. Your email client is launching to ${name}.
-                                        </div>`;
-            document.body.appendChild(feedbackMessage);
-            
-            setTimeout(() => {
-                feedbackMessage.remove();
-            }, 4000);
+      // LADIES examples
+      'L11': {code:'L11', label:'Azaro — Sweet Power', gender:'female', family:'oriental', strength:'base', notes:['tobacco','vanilla']},
+      'L13': {code:'L13', label:'White Oud — Subtle Oud', gender:'female', family:'woody', strength:'base', notes:['oud','rose']},
+      'L19': {code:'L19', label:'Most Wanted — Flirty Night', gender:'female', family:'aromatic', strength:'moderate', notes:['amber','jasmine']},
+      'L24': {code:'L24', label:'Gucci Oud — Luxe Warmth', gender:'female', family:'oriental', strength:'base', notes:['oud','saffron']},
+      'L33': {code:'L33', label:'One Million — Flashy Citrus', gender:'female', family:'citrus', strength:'light', notes:['bergamot','mint']},
 
-            closeModal();
-        });
-        // --- ORIGINAL JS FOR MODAL/CONTACT END ---
-    </script>
+      // Unisex / fallback
+      'U01': {code:'U01', label:'Aventus Creed — Bold & Clean', gender:'unisex', family:'woody', strength:'moderate', notes:['pineapple','musk']},
+      'U02': {code:'U02', label:'Terre D\'Hermes — Earth & Class', gender:'unisex', family:'woody', strength:'moderate', notes:['orange','vetiver']}
+    };
+
+    // small scoring function to pick best match
+    function scoreMatch(pref, p){
+      let score = 0;
+      if(pref.gender === 'unisex') score += (p.gender === 'unisex') ? 3 : 1;
+      else if(pref.gender === p.gender) score += 4;
+      if(pref.family === p.family) score += 3;
+      if(pref.strength === p.strength) score += 2;
+      if(pref.mood === 'power' && p.strength === 'base') score += 1;
+      // notes boost if user typed in a preferred note
+      if(pref.prefNotes){
+        const lowerNotes = pref.prefNotes.split(',').map(s=>s.trim().toLowerCase()).filter(Boolean);
+        lowerNotes.forEach(n => { if(p.notes.join(' ').toLowerCase().includes(n)) score += 2; });
+      }
+      return score;
+    }
+
+    // find best code
+    function findBestPerfume(pref){
+      let best = null; let bestScore = -1;
+      Object.values(perfumeDB).forEach(p => {
+        const s = scoreMatch(pref,p);
+        if(s > bestScore){ best = p; bestScore = s; }
+      });
+      return best || perfumeDB['U01'];
+    }
+
+    // UI wiring
+    el('findScent')?.addEventListener('click', function(){
+      const gender = el('gender').value;
+      const strength = el('strength').value;
+      const family = el('family').value;
+      const mood = el('mood').value;
+      const prefNotes = el('notes').value;
+
+      const pref = { gender, strength, family, mood, prefNotes };
+      const match = findBestPerfume(pref);
+
+      // Display recommendation (Gary V-style, concise)
+      const tone = `RESULT: ${match.code} — ${match.label}. EXECUTION: this matches your ${mood.toUpperCase()} vibe. Wear it loud, own the room.`;
+      el('scentOutput').innerHTML = `<p class="font-bold text-orange-400 mb-2">NOW EXECUTE.</p><p>${tone}</p>`;
+
+      // show actions
+      el('scentActions').classList.remove('hidden');
+      el('buyLink').href = "https://www.yaga.co.za/klickbay"; // adjust if you have direct product URL
+
+      // store last match for enquiry
+      el('sendEnquiryBtn').dataset.matchCode = match.code;
+      el('sendEnquiryBtn').dataset.matchLabel = match.label;
+    });
+
+    // reset
+    el('resetScent')?.addEventListener('click', function(){
+      el('gender').value = 'unisex'; el('strength').value = 'light'; el('family').value='woody'; el('mood').value='daily'; el('notes').value=''; el('scentOutput').innerHTML = '<p class="italic text-gray-400">No selection yet. Choose your vibe, then press FIND MY CODE.</p>'; el('scentActions').classList.add('hidden');
+    });
+
+    // Send Enquiry button (about a fragrance) — uses obfuscated email like modal
+    el('sendEnquiryBtn')?.addEventListener('click', function(){
+      const code = this.dataset.matchCode || 'UNKNOWN';
+      const label = this.dataset.matchLabel || 'Unknown fragrance';
+      const preSubject = encodeURIComponent(`Enquiry: ${code} — ${label}`);
+      const namePrompt = prompt('Your name (for enquiry):');
+      if(!namePrompt) return alert('Name required to send enquiry.');
+      const phoneOrEmail = prompt('Your contact (email or phone):');
+      const message = prompt('Any extra notes for the enquiry?') || '';
+
+      const body = encodeURIComponent(`Enquiry for: ${code} — ${label}\nName: ${namePrompt}\nContact: ${phoneOrEmail}\nNotes: ${message}\n\n--- Sent from Klickbay Scent Finder.`);
+      const mailto = `mailto:${targetEmail}?subject=${preSubject}&body=${body}`;
+      window.location.href = mailto;
+    });
+
+    // ---------- Footer contact quick open ----------
+    el('openContactModalFooter')?.addEventListener('click', openModal);
+
+    // ---------- small progressive enhancement: lazy-loading images "src" fallback if not set ----------
+    document.addEventListener('DOMContentLoaded', function(){
+      // nothing heavy here — images are already lazy via loading="lazy"
+    });
+  </script>
+
 </body>
 </html>
