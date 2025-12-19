@@ -1,206 +1,125 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klickbay | Premium YCZ Fragrance Matcher & Business Loans SA</title>
-    
-    <meta name="description" content="Discover your signature scent with Klickbay's YCZ Fragrance Matcher. Get exclusive deals on Golden Sands & Lucky Sapphire. Plus, access business loans for SA entrepreneurs.">
-    <meta name="keywords" content="YCZ Fragrance South Africa, Business Loans SA, Perfume Quiz, Klickbay, Golden Sands Perfume, Lucky Sapphire Cologne">
-
+    <title>KLICKBAY | SCENT & SCALE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark-bg: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --text-light: #e0e0e0;
-        }
+        :root { --gold: #C5A059; --black: #050505; --gray: #1a1a1a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--black); color: white; overflow-x: hidden; }
         
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            margin: 0;
-            line-height: 1.6;
-        }
+        /* Typography - Gary Vee Style (Bold/Large) */
+        h1, h2 { text-transform: uppercase; letter-spacing: -2px; line-height: 0.9; }
+        
+        .nav { padding: 30px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; z-index: 100; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); }
+        .logo { width: 140px; }
 
-        header {
-            padding: 20px;
-            text-align: center;
-            background: rgba(0,0,0,0.8);
-            border-bottom: 1px solid var(--gold);
-        }
+        /* Hero Section */
+        .section-hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; position: relative; }
+        .hero-text { font-size: clamp(4rem, 12vw, 10rem); z-index: 2; }
+        .hero-sub { color: var(--gold); font-size: 1.2rem; letter-spacing: 5px; margin-top: 20px; font-weight: 300; }
 
-        .logo {
-            max-width: 180px;
-            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+        /* Vayner-Style Visual Experience */
+        .scent-matcher { padding: 100px 10%; background: #0a0a0a; }
+        .matcher-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        
+        .mood-card { 
+            background: var(--gray); padding: 60px; border-radius: 4px; border: 1px solid #333;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
         }
-
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .quiz-container {
-            max-width: 700px;
-            margin: -50px auto 40px;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #333;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, var(--gold), #b8860b);
-            color: #000;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .mood-card:hover { border-color: var(--gold); transform: translateY(-10px); background: #222; }
+        
+        .btn-action { 
+            background: white; color: black; padding: 20px 40px; text-decoration: none; 
+            font-weight: 900; display: inline-block; margin-top: 30px; transition: 0.3s;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 10px;
-            display: inline-block;
-            text-decoration: none;
         }
+        .btn-action:hover { background: var(--gold); color: white; }
 
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-        }
+        /* The Business Loan - High Performance Section */
+        .loan-vault { position: relative; background: white; color: black; padding: 100px 10%; }
+        .loan-vault h2 { font-size: 5rem; margin-bottom: 40px; }
+        
+        .video-container { width: 100%; aspect-ratio: 16/9; background: black; margin: 40px 0; border-radius: 0px; overflow: hidden; box-shadow: 0 50px 100px rgba(0,0,0,0.3); }
 
-        /* SEO Content Section */
-        .seo-section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #111;
-            border-radius: 10px;
-        }
-
-        .seo-section h2 { color: var(--gold); }
-
-        .video-wrapper {
-            max-width: 800px;
-            margin: 40px auto;
-            border: 2px solid var(--gold);
-            border-radius: 15px;
-            overflow: hidden;
-            background: #000;
-        }
-
-        video { width: 100%; display: block; }
-
-        footer {
-            padding: 40px;
-            text-align: center;
-            font-size: 13px;
-            color: #666;
-            border-top: 1px solid #222;
+        .footer { padding: 60px 10%; font-size: 0.8rem; border-top: 1px solid #333; color: #666; }
+        
+        @media (max-width: 768px) {
+            .matcher-grid { grid-template-columns: 1fr; }
+            .hero-text { font-size: 4rem; }
+            .loan-vault h2 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="https://klickbay.github.io/Klickbay%20logo%204c.jpg" alt="Klickbay Luxury Logo" class="logo">
-</header>
+    <nav class="nav">
+        <img src="https://klickbay.github.io/Klickbay%20logo%204c.jpg" class="logo" alt="Klickbay">
+        <div style="font-weight: 900; font-size: 0.8rem;">[ 2025 EDITION ]</div>
+    </nav>
 
-<section class="hero">
-    <h1 style="font-size: 3rem; margin-bottom: 10px; color: var(--gold);">The Art of Fragrance</h1>
-    <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">Don't just wear a scent. Wear your personality. Find your YCZ match in 30 seconds.</p>
-</section>
+    <section class="section-hero">
+        <h1 class="hero-text animate__animated animate__fadeInUp">STOP<br><span style="color:var(--gold)">GUESSING.</span></h1>
+        <p class="hero-sub">THE MOOD-BASED FRAGRANCE ENGINE</p>
+    </section>
 
-<div class="quiz-container" id="quiz-box">
-    <div id="quiz-content">
-        <h2>Ready to find your signature?</h2>
-        <p>Your scent is the first thing people notice and the last thing they forget.</p>
-        <button class="btn" onclick="startQuiz()">Start Quiz</button>
-    </div>
-</div>
+    <section class="scent-matcher">
+        <div class="matcher-grid">
+            <div>
+                <h2 style="font-size: 3rem; margin-bottom: 20px;">HOW DO YOU<br>WANT TO FEEL?</h2>
+                <p style="color: #888; margin-bottom: 40px;">Fragrance isn't about the smell. It's about the energy you leave in the room.</p>
+            </div>
+            <div id="quiz-ui">
+                <div class="mood-card" onclick="matchScent('Brave')">
+                    <h3>BOLD & BRAVE</h3>
+                    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">You're here to lead. You want wood, spice, and dominance.</p>
+                </div>
+                <div class="mood-card" style="margin-top:20px;" onclick="matchScent('Smooth')">
+                    <h3>SMOOTH & ROMANTIC</h3>
+                    <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Date night or intimate gala. Florals, musk, and mystery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="seo-section">
-    <h2>Why Choose YCZ Fragrances in South Africa?</h2>
-    <p>Finding the perfect perfume online can be a challenge. That's why <strong>Klickbay</strong> has curated the ultimate 2025 Fragrance Matcher. Whether you are looking for the fresh notes of <strong>YCZ Midnight Marine</strong> or the deep, romantic allure of <strong>Golden Sands</strong>, our interactive application uses scent-profile logic to match your personality to the right bottle.</p>
-    
-    <p>In the South African climate, longevity is key. YCZ scents are formulated as high-concentration Eau de Parfums, ensuring you stay fresh from the boardroom to a late-night dinner in Sandton. Use our exclusive links to access seasonal promotions and significant discounts on top-tier fragrances.</p>
+    <section class="loan-vault">
+        <h2>SCALE YOUR<br>BUSINESS.</h2>
+        <div class="video-container">
+            <video width="100%" height="100%" controls muted playsinline loop>
+                <source src="https://github.com/klickbay/klickbay.github.io/raw/main/YOUR_VIDEO_FILENAME.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div style="max-width: 600px;">
+            <p style="font-size: 1.5rem; font-weight: 700;">Attention is the asset. Capital is the fuel.</p>
+            <p style="margin: 20px 0;">We help South African entrepreneurs move faster with curated 3rd-party business loan solutions.</p>
+            <a href="https://bit.ly/4iCr8lv" class="btn-action">Get Funded Now</a>
+        </div>
+    </section>
 
-    <h2>Empowering Entrepreneurs: Business Loans for Growth</h2>
-    <p>At Klickbay, we don't just care about how you smell; we care about your success. Scaling a business in South Africa requires capital. Below, you can explore our <strong>third-party business loan solutions</strong> designed for small to medium enterprises. Watch the video to see how you can secure funding to grow your inventory, upgrade your equipment, or expand your reach.</p>
-</div>
+    <footer class="footer">
+        <p>KLICKBAY. POPI COMPLIANT. 2025 ALL RIGHTS RESERVED.</p>
+        <p style="margin-top: 10px;">Transparency: We use affiliate tracking links. If you buy, we earn. That's the hustle.</p>
+    </footer>
 
-<div class="video-wrapper">
-    <video controls muted playsinline poster="https://via.placeholder.com/800x450/111/d4af37?text=Klickbay+Business+Loans">
-        <source src="https://github.com/klickbay/klickbay.github.io/raw/main/YOUR_VIDEO_FILE.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div style="padding: 20px; text-align: center;">
-        <a href="https://bit.ly/4iCr8lv" class="btn" style="background: #fff; color: #000;">Apply for a Business Loan</a>
-    </div>
-</div>
-
-<footer>
-    <p>© 2025 Klickbay South Africa. POPI Act Compliant Site.</p>
-    <p>Notice: This site contains affiliate links. We may earn a commission on purchases made through these links at no extra cost to you. This supports our ability to provide free tools like the Scent Matcher.</p>
-</footer>
-
-<script>
-    const quizData = [
-        { q: "Where are you wearing this scent most?", a: ["Office / Professional", "Date Night / Evening", "Gym / Casual Outdoors"] },
-        { q: "How do you want to be remembered?", a: ["Sophisticated & Clean", "Bold & Mysterious", "Fresh & Energetic"] }
-    ];
-
-    let step = 0;
-    let score = "";
-
-    function startQuiz() {
-        renderQuestion();
-    }
-
-    function renderQuestion() {
-        let q = quizData[step];
-        let html = `<h2>${q.q}</h2>`;
-        q.a.forEach(opt => {
-            html += `<button class="btn" onclick="nextStep('${opt}')">${opt}</button>`;
-        });
-        document.getElementById('quiz-content').innerHTML = html;
-    }
-
-    function nextStep(choice) {
-        score += choice;
-        step++;
-        if (step < quizData.length) {
-            renderQuestion();
-        } else {
-            showResult();
+    <script>
+        function matchScent(mood) {
+            const ui = document.getElementById('quiz-ui');
+            let result = mood === 'Brave' ? 'YCZ LUCKY SAPPHIRE' : 'YCZ GOLDEN SANDS';
+            let promo = mood === 'Brave' ? 'BOLD25' : 'LOVE20';
+            
+            ui.innerHTML = `
+                <div class="animate__animated animate__zoomIn" style="text-align:center; padding: 40px; border: 2px solid var(--gold);">
+                    <h2 style="font-size: 2.5rem;">${result}</h2>
+                    <p style="margin: 20px 0; letter-spacing: 2px;">YOUR MOOD IS SET.</p>
+                    <p style="background:var(--gold); display:inline-block; padding: 5px 15px; font-weight:900;">CODE: ${promo}</p>
+                    <br>
+                    <a href="https://tidd.ly/4j1nPV8" class="btn-action">COLLECT THE SCENT</a>
+                </div>
+            `;
         }
-    }
-
-    function showResult() {
-        let title = "YCZ Lucky Sapphire";
-        let desc = "The perfect match for your professional lifestyle.";
-        
-        if (score.includes("Date Night")) {
-            title = "YCZ Golden Sands";
-            desc = "A romantic, lingering floral scent for your most special nights.";
-        }
-
-        document.getElementById('quiz-content').innerHTML = `
-            <h2 style="color:var(--gold)">Your Match: ${title}</h2>
-            <p>${desc}</p>
-            <a href="https://tidd.ly/4j1nPV8" rel="sponsored" class="btn">Claim My Discounted Bottle</a>
-            <p style="font-size:12px; margin-top:10px;">Clicking above unlocks your special Klickbay pricing.</p>
-        `;
-    }
-</script>
-
+    </script>
 </body>
 </html>
