@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KLICKBAY | YCZ Luxury Fragrance & Gift Concierge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         :root { --gold: #C5A059; --black: #050505; --white: #ffffff; --gray: #111; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,7 +12,7 @@
 
         /* Animated Christmas Sphere Logo */
         .logo-sphere {
-            width: 90px; height: 90px; /* Half size */
+            width: 90px; height: 90px;
             border-radius: 50%;
             border: 2px solid var(--gold);
             overflow: hidden;
@@ -33,13 +34,18 @@
         nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
 
         /* Gift App Styles */
-        .app-container { max-width: 800px; margin: 60px auto; padding: 40px; background: var(--gray); border-radius: 8px; text-align: center; }
+        .app-container { max-width: 800px; margin: 60px auto; padding: 40px; background: var(--gray); border-radius: 8px; text-align: center; border: 1px solid #222; }
         .gift-btn { background: var(--gold); color: black; border: none; padding: 15px 30px; font-weight: 800; cursor: pointer; margin: 10px; transition: 0.3s; text-transform: uppercase; }
         .gift-btn:hover { background: white; }
+        .result-img { width: 100%; max-width: 300px; border-radius: 8px; margin: 20px 0; border: 1px solid var(--gold); }
 
-        /* Scent Spotlight Section (90% Focus) */
-        .scent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 5% 10%; }
-        .promo-img { width: 100%; border: 1px solid #333; }
+        /* Luxury Product Gallery */
+        .gallery-title { text-align: center; margin: 40px 0; letter-spacing: 4px; color: var(--gold); }
+        .scent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 0 10% 60px; }
+        .promo-card { position: relative; overflow: hidden; border: 1px solid #222; transition: 0.4s; }
+        .promo-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .promo-img { width: 100%; height: 350px; object-fit: cover; display: block; }
+        .promo-label { position: absolute; bottom: 0; background: rgba(0,0,0,0.8); width: 100%; padding: 15px; font-size: 0.8rem; text-align: center; }
 
         /* Loan Sidebar Ad (10% Focus) */
         .loan-ad { 
@@ -50,6 +56,7 @@
         }
 
         .footer { padding: 40px; text-align: center; font-size: 0.8rem; color: #444; border-top: 1px solid #222; }
+        @media (max-width: 768px) { .loan-ad { flex-direction: column; text-align: center; gap: 20px; } }
     </style>
 </head>
 <body>
@@ -59,68 +66,82 @@
             <div class="snow-overlay"></div>
             <img src="Klickbay logo 4c.jpg" alt="Klickbay">
         </div>
-        <div style="font-size: 0.8rem; letter-spacing: 2px;">LUXURY FRAGRANCE HOUSE</div>
+        <div style="font-size: 0.8rem; letter-spacing: 2px;">YCZ LUXURY FRAGRANCE HOUSE</div>
     </nav>
 
     <div class="app-container" id="gift-app">
-        <h1 style="color: var(--gold); margin-bottom: 20px;">YCZ GIFT CONCIERGE</h1>
-        <p>Who are we shopping for this Christmas?</p>
+        <h1 style="color: var(--gold); margin-bottom: 20px; font-weight: 900;">YCZ GIFT CONCIERGE</h1>
+        <p>Expertly matching personalities to scents since 2025.</p>
         <div style="margin-top: 30px;">
-            <button class="gift-btn" onclick="giftStep('Woman')">For Her</button>
-            <button class="gift-btn" onclick="giftStep('Man')">For Him</button>
+            <button class="gift-btn" onclick="giftStep('Woman')">Shop for Her</button>
+            <button class="gift-btn" onclick="giftStep('Man')">Shop for Him</button>
         </div>
     </div>
 
+    <h2 class="gallery-title">THE 2025 COLLECTION</h2>
     <section class="scent-grid">
-        <div>
-            <img src="imgf-300x600px-1765549459874.png" class="promo-img" alt="YCZ Christmas Special">
+        <div class="promo-card">
+            <img src="1_3659c3a1-cd40-4317-a624-5fbd5a2bf803.jpeg" class="promo-img" alt="YCZ One">
+            <div class="promo-label">YCZ GOLDEN SANDS</div>
         </div>
-        <div>
-            <h2 style="font-size: 3rem; margin-bottom: 20px;">YCZ HOLIDAY<br>COLLECTION</h2>
-            <p style="color: #888; margin-bottom: 30px;">Experience the height of South African luxury. Our 2025 Christmas specials offer up to 25% off the signature Golden Sands and Lucky Sapphire editions.</p>
-            <img src="imgf-250x250px-1765549398362.png" style="width: 200px; margin-bottom: 20px;" alt="Discount Info">
-            <br>
-            <a href="https://tidd.ly/4j1nPV8" class="gift-btn" style="text-decoration:none; display:inline-block;">Shop the Sale</a>
+        <div class="promo-card">
+            <img src="2.0_-_1_b270f63f-1aba-4102-a236-09755e4f6683.jpeg" class="promo-img" alt="YCZ Two">
+            <div class="promo-label">YCZ LUCKY SAPPHIRE</div>
+        </div>
+        <div class="promo-card">
+            <img src="2.0_-_2-_2_0099cb61-7abb-4f02-9da3-962f6813d231.jpeg" class="promo-img" alt="YCZ Three">
+            <div class="promo-label">YCZ LOVE'S RED FLAME</div>
+        </div>
+        <div class="promo-card">
+            <img src="4_a09a05f4-ccda-45ef-a75a-8e9f2146b947.jpeg" class="promo-img" alt="YCZ Four">
+            <div class="promo-label">YCZ ETERNAL LOVE</div>
         </div>
     </section>
 
     <aside class="loan-ad">
         <div>
             <h3 style="color: var(--gold);">NEED CAPITAL TO SCALE?</h3>
-            <p style="font-size: 0.9rem; opacity: 0.7;">Business loans for SA entrepreneurs up to R5M.</p>
+            <p style="font-size: 0.9rem; opacity: 0.7;">Business loans for South African entrepreneurs up to R5M.</p>
         </div>
         <a href="https://bit.ly/4iCr8lv" class="gift-btn" style="background: white; font-size: 0.7rem; padding: 10px 20px; text-decoration: none;">Apply Now</a>
     </aside>
 
     <footer class="footer">
-        <p>© 2025 KLICKBAY. FRAGRANCE BY YCZ. POPI COMPLIANT.</p>
+        <p>© 2025 KLICKBAY. ALL YCZ FRAGRANCE RIGHTS RESERVED. POPI COMPLIANT.</p>
     </footer>
 
     <script>
         function giftStep(target) {
             const app = document.getElementById('gift-app');
             app.innerHTML = `
-                <h2 style="color: var(--gold);">WHAT IS THEIR VIBE?</h2>
-                <button class="gift-btn" onclick="showGift('${target}', 'Classic')">Classic & Timeless</button>
-                <button class="gift-btn" onclick="showGift('${target}', 'Modern')">Modern & Bold</button>
+                <h2 style="color: var(--gold);">SELECT THEIR VIBE</h2>
+                <button class="gift-btn" onclick="showGift('${target}', 'Classic')">Elegant & Timeless</button>
+                <button class="gift-btn" onclick="showGift('${target}', 'Modern')">Bold & Passionate</button>
             `;
         }
 
         function showGift(target, vibe) {
             const app = document.getElementById('gift-app');
             let recommendation = "";
+            let imgSource = "";
+            
             if(target === 'Woman') {
-                recommendation = vibe === 'Classic' ? "YCZ Golden Sands (Eau de Parfum)" : "YCZ Love's Red Flame";
+                recommendation = vibe === 'Classic' ? "YCZ Golden Sands" : "YCZ Eternal Love";
+                imgSource = vibe === 'Classic' ? "1_3659c3a1-cd40-4317-a624-5fbd5a2bf803.jpeg" : "4_a09a05f4-ccda-45ef-a75a-8e9f2146b947.jpeg";
             } else {
-                recommendation = vibe === 'Classic' ? "YCZ Midnight Marine" : "YCZ Lucky Sapphire";
+                recommendation = vibe === 'Classic' ? "YCZ Lucky Sapphire" : "YCZ Love's Red Flame";
+                imgSource = vibe === 'Classic' ? "2.0_-_1_b270f63f-1aba-4102-a236-09755e4f6683.jpeg" : "2.0_-_2-_2_0099cb61-7abb-4f02-9da3-962f6813d231.jpeg";
             }
             
             app.innerHTML = `
                 <div class="animate__animated animate__fadeIn">
-                    <p>THE PERFECT GIFT:</p>
-                    <h2 style="color: var(--gold); font-size: 2.5rem; margin: 15px 0;">${recommendation}</h2>
-                    <a href="https://tidd.ly/4j1nPV8" class="gift-btn" style="text-decoration:none; display:inline-block;">Buy with Christmas Discount</a>
-                    <button class="gift-btn" style="background:transparent; color:#555; border:1px solid #333;" onclick="location.reload()">Reset Concierge</button>
+                    <p style="letter-spacing:2px;">THE PERFECT MATCH:</p>
+                    <h2 style="color: var(--gold); font-size: 2.5rem; margin: 15px 0; font-weight:900;">${recommendation}</h2>
+                    <img src="${imgSource}" class="result-img" alt="Match Result">
+                    <br>
+                    <a href="https://tidd.ly/4j1nPV8" class="gift-btn" style="text-decoration:none; display:inline-block;">Get 20% Off Code</a>
+                    <br>
+                    <button class="gift-btn" style="background:transparent; color:#555; border:1px solid #333; font-size:0.7rem;" onclick="location.reload()">Restart Search</button>
                 </div>
             `;
         }
