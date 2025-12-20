@@ -4,133 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Vr3vfZRPlSWeJKAkMtCXfzVdE2b8X2zevPUxyWKC2H0" />
-    <title>Klickbay | Premium YCZ Fragrances</title>
-    <meta name="description" content="Exclusive deals on YCZ Fragrances. Experience the scent of luxury with Klickbay's curated collection.">
+    <title>Klickbay | The YCZ Luxury Experience</title>
     
     <style>
         :root {
-            --purple-haze: rgba(138, 43, 226, 0.6);
             --gold: #d4af37;
-            --dark-bg: #0a0a0a;
+            --purple-haze: #8a2be2;
+            --dark-pitch: #050505;
         }
 
         body {
             margin: 0;
-            font-family: 'Georgia', serif; /* Nicholson-style classic font */
-            background-color: var(--dark-bg);
-            color: white;
-            overflow-x: hidden;
+            background-color: var(--dark-pitch);
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
         }
 
-        /* Hero Section */
+        /* Saturn Ring Logo Animation */
+        .logo-wrapper {
+            position: relative;
+            width: 150px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .saturn-ring {
+            position: absolute;
+            width: 160px;
+            height: 40px;
+            border: 4px solid var(--purple-haze);
+            border-radius: 50%;
+            transform: rotateX(75deg);
+            animation: rotateRing 4s linear infinite;
+            box-shadow: 0 0 15px var(--purple-haze);
+        }
+
+        @keyframes rotateRing {
+            0% { transform: rotateX(75deg) rotateZ(0deg); }
+            100% { transform: rotateX(75deg) rotateZ(360deg); }
+        }
+
+        /* Hero - The "Soft Gary V" vibe */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('bride-holds-bottle-parfume-her-tender-arms.jpg');
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('bride-holds-bottle-parfume-her-tender-arms.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Round Gold Border Images */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px 20px;
+        }
+
+        .product-card {
+            text-align: center;
+            width: 250px;
+        }
+
+        .product-card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--gold);
+        }
+
+        /* Trust & USP Section */
+        .trust-section {
+            background: #111;
+            padding: 60px 10%;
             text-align: center;
         }
 
-        /* Logo Styling - Half Size + Purple Haze + Christmas Animation */
-        .logo-container {
-            position: relative;
-            width: 250px; /* Reduced by half */
-            filter: drop-shadow(0 0 15px var(--purple-haze));
-            animation: festiveGlow 3s infinite alternate;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-        }
-
-        @keyframes festiveGlow {
-            0% { filter: drop-shadow(0 0 10px var(--purple-haze)); transform: scale(1); }
-            100% { filter: drop-shadow(0 0 25px #ff0000); transform: scale(1.05); }
-        }
-
-        /* Smooth Usher-style Headlines */
-        h1 {
-            font-size: 3.5rem;
-            letter-spacing: 2px;
-            margin-top: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-
-        /* Gary V Style Action Button */
-        .cta-button {
-            background: #fff;
-            color: #000;
-            padding: 15px 40px;
+        .cta-btn {
+            background: var(--gold);
+            color: black;
+            padding: 18px 35px;
             text-decoration: none;
             font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 5px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
         }
 
-        .cta-button:hover {
-            background: var(--purple-haze);
-            color: white;
-            transform: translateY(-3px);
+        /* Concierge Solution */
+        #concierge {
+            background: linear-gradient(145deg, #1a1a1a, #000);
+            padding: 40px;
+            border: 1px solid var(--purple-haze);
+            margin: 40px 10%;
+            border-radius: 15px;
         }
 
-        /* Product Gallery (Ensuring images aren't cut off) */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 50px;
-        }
-
-        .gallery img {
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
             width: 100%;
-            height: 400px;
-            object-fit: contain; /* Prevents cutting off */
-            background: #1a1a1a;
-            border: 1px solid #333;
+            background: #222;
+            color: white;
+            border: 1px solid var(--gold);
         }
 
-        /* POPI Compliance Footer */
-        .popi-notice {
-            background: #111;
-            padding: 20px;
-            font-size: 0.8rem;
+        .popi-footer {
+            font-size: 12px;
+            color: #777;
             text-align: center;
-            border-top: 1px solid var(--purple-haze);
+            padding: 40px;
+            border-top: 1px solid #333;
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="logo-container">
-            <img src="Klickbay logo 4c.jpg" alt="Klickbay Logo">
+    <header>
+        <div class="logo-wrapper">
+            <div class="saturn-ring"></div>
+            <img src="Klickbay logo 4c.jpg" class="logo-img" alt="Klickbay">
         </div>
-        <h1>The Essence of Elegance</h1>
-        <p><i>"Style is a choice. Make the right one."</i></p>
-        <br>
-        <a href="https://tidd.ly/4j1nPV8" class="cta-button">Access Special Offers</a>
+    </header>
+
+    <section class="hero">
+        <h1>Legacy Isn't Just Seen. It's Scented.</h1>
+        <p style="max-width: 600px; font-size: 1.2rem;">You’re working hard, building your empire. You deserve to smell like the success you’re chasing. YCZ isn't just fragrance; it's your signature on the world.</p>
+        <a href="https://tidd.ly/4j1nPV8" class="cta-btn">CLAIM YOUR EXCLUSIVE OFFER</a>
     </section>
 
-    <div class="gallery">
-        <img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg" alt="Fragrance Look 1">
-        <img src="2148021597.jpg" alt="Fragrance Look 2">
-        <img src="2149353108.jpg" alt="Fragrance Look 3">
-        <img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg" alt="Fragrance Look 4">
+    <section class="trust-section">
+        <h2>Why YCZ? (The USP)</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; text-align: left;">
+            <div>
+                <h3 style="color:var(--gold)">The Pain Point</h3>
+                <p>Most fragrances fade by noon. You need a scent that stays in the room long after you've closed the deal.</p>
+            </div>
+            <div>
+                <h3 style="color:var(--gold)">The Solution</h3>
+                <p>YCZ uses high-concentration essential oils. It’s romantic enough for a date, but powerful enough for the boardroom.</p>
+            </div>
+            <div>
+                <h3 style="color:var(--gold)">The Benefit</h3>
+                <p>Instant confidence. Skin-deep hydration from our skincare line. A presence that commands respect.</p>
+            </div>
+        </div>
+    </section>
+
+    <h2 style="text-align:center; margin-top:50px;">The Fragrance Collection</h2>
+    <div class="product-grid">
+        <div class="product-card"><img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg"><p>The Executive</p></div>
+        <div class="product-card"><img src="2148021597.jpg"><p>Midnight Romance</p></div>
+        <div class="product-card"><img src="2149353108.jpg"><p>The Hustle</p></div>
+        <div class="product-card"><img src="7982.jpg"><p>Pure Elegance</p></div>
     </div>
 
-    <footer class="popi-notice">
-        <p>© 2024 Klickbay. We value your privacy. In accordance with the <b>POPI Act (Protection of Personal Information Act)</b>, we ensure that your data is handled securely and transparently. By using this site, you agree to our terms of service.</p>
-        <p><a href="https://tidd.ly/4j1nPV8" style="color: var(--gold);">Shop YCZ Fragrances</a></p>
+    <h2 style="text-align:center;">Luxury Skincare</h2>
+    <div class="product-grid">
+        <div class="product-card"><img src="14.jpeg"><p>Velvet Glow</p></div>
+        <div class="product-card"><img src="1_1406158a-7b99-4e2a-9e5c-4742da28bcaa.jpeg"><p>Deep Hydration</p></div>
+        <div class="product-card"><img src="4_4fe4a2d9-87f8-44c6-a150-61a93822dcc1.jpeg"><p>Regenerative Silk</p></div>
+    </div>
+
+    <section id="concierge">
+        <h3>Scent Concierge & Gift Suggestion</h3>
+        <p>Tell us your vibe, and we'll suggest your YCZ match.</p>
+        <label>Who are you shopping for?</label>
+        <select id="userVibe">
+            <option value="empire">Myself - Building an Empire (Gary V Style)</option>
+            <option value="romantic">A Special Somebody (Usher Style)</option>
+            <option value="classic">Family / Legend Status (Nicholson Style)</option>
+        </select>
+        <button class="cta-btn" onclick="suggestProduct()">Get Suggestion</button>
+        <p id="suggestionResult" style="margin-top:20px; color: var(--gold); font-weight:bold;"></p>
+    </section>
+
+    <footer class="popi-footer">
+        <p><strong>POPI ACT COMPLIANCE:</strong> Klickbay respects your privacy. We do not store personal data through this affiliate portal. Any information entered into our Concierge tool is processed locally in your browser and not saved to our servers. Your journey to luxury is secure with us.</p>
+        <p>&copy; 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:white">Shop YCZ Official</a></p>
     </footer>
 
+    <script>
+        function suggestProduct() {
+            const vibe = document.getElementById('userVibe').value;
+            let msg = "";
+            if(vibe === 'empire') msg = "We suggest 'The Hustle' - High intensity for the 24/7 winner.";
+            if(vibe === 'romantic') msg = "Go with 'Midnight Romance' - Smooth, floral, and unforgettable.";
+            if(vibe === 'classic') msg = "The 'Pure Elegance' collection is for those who have already arrived.";
+            document.getElementById('suggestionResult').innerText = msg + " Click the link above to shop now!";
+        }
+    </script>
 </body>
 </html>
