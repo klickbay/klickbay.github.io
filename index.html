@@ -10,7 +10,6 @@
         :root {
             --gold: #c5a059;
             --purple: #6a0dad;
-            /* Lightened overlay from 0.75 to 0.45 for background visibility */
             --overlay: rgba(0, 0, 0, 0.45); 
         }
 
@@ -24,10 +23,28 @@
             color: #ffffff;
             font-family: 'Times New Roman', Times, serif;
             letter-spacing: 1px;
-            text-shadow: 2px 2px 4px #000; /* Ensures text stays sharp over background */
+            text-shadow: 2px 2px 4px #000;
         }
 
-        /* Animated Thick Saturn Rings */
+        /* --- NEW STYLES FOR THE FIRST THREE PICTURES --- */
+        .ycz-banner-container {
+            display: flex;
+            flex-direction: column; /* Stack them vertically */
+            align-items: center;    /* Center them horizontally */
+            gap: 20px;              /* Space between them */
+            padding: 20px 0;
+        }
+
+        .ycz-banner-container img {
+            width: 80%;             /* Same width for all */
+            max-width: 600px;       /* Prevents them from getting too huge on desktop */
+            height: auto;           /* Maintains aspect ratio */
+            border-radius: 20px;    /* Rounded corners */
+            border: 2px solid var(--gold); /* Optional: adds a border to match your theme */
+            display: block;
+        }
+        /* ---------------------------------------------- */
+
         .logo-header { display: flex; justify-content: center; padding: 60px 0; }
         .logo-container { position: relative; width: 140px; height: 140px; }
         .logo-img { width: 100%; height: 100%; border-radius: 50%; z-index: 10; position: relative; border: 2px solid var(--gold); }
@@ -53,10 +70,9 @@
             100% { transform: rotateX(75deg) rotateZ(360deg); }
         }
 
-        /* Holiday Vault Interactive Section */
         #holiday-vault {
             background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #ff0000; /* Subtle Christmas Red hint */
+            border: 2px solid #ff0000;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
             margin: 40px 10%;
             padding: 40px;
@@ -76,7 +92,6 @@
 
         .vault-btn:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
 
-        /* Porthole Images with Nautical Screws */
         .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 40px 5%; }
         .porthole {
             position: relative;
@@ -96,7 +111,6 @@
         .s-t { top: 2px; } .s-b { bottom: 2px; } .s-l { left: 4px; } .s-r { right: 4px; }
 
         .section-text { background: rgba(0,0,0,0.7); margin: 20px 10%; padding: 30px; border-left: 5px solid var(--gold); font-size: 1.2rem; }
-        
         .footer { text-align: center; padding: 40px; font-size: 0.8rem; background: #000; }
     </style>
 </head>
@@ -109,34 +123,20 @@
         </div>
     </div>
 
+    <div class="ycz-banner-container">
+        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845">
+            <img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845" border="0">
+        </a>
 
-<!-- START ADVERTISER: YCZ Fragrance from awin.com -->
+        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845">
+            <img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845" border="0">
+        </a>
 
-<a rel="sponsored" href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845">
-    <img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845" border="0">
-</a>
+        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845">
+            <img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845" border="0">
+        </a>
+    </div>
 
-
-    
-<!-- START ADVERTISER: YCZ Fragrance from awin.com -->
-
-<a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845">
-    <img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845" border="0">
-</a>
-
-    
-
-<!-- START ADVERTISER: YCZ Fragrance from awin.com -->
-
-<a rel="sponsored" href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845">
-    <img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845" border="0">
-</a>
-
-<!-- END ADVERTISER: YCZ Fragrance from awin.com -->
-
-
-
-    <br>
     <section id="holiday-vault">
         <h2 style="color: var(--gold); margin-top: 0;">CHRISTMAS RESERVE UNLOCKED</h2>
         <p>Accessing the seasonal high-concentration specials for YCZ collectors.</p>
@@ -168,28 +168,11 @@
         </div>
     </div>
 
-    <div class="section-text">
-        One bottle of YCZ outlasts two bottles of a standard competitor. Don’t pay for the air; pay for the oil.
-    </div>
-
-    <section id="legends-choice" style="background: rgba(197, 160, 89, 0.15); border: 1px solid var(--gold); margin: 20px 10%; padding: 30px; text-align: center;">
-        <h3 style="color: var(--gold); text-transform: uppercase;">The Legend's Choice</h3>
-        <div id="choice-display"></div>
-    </section>
-    
-
-    
     <footer class="footer">
-
-<!-- START ADVERTISER: YCZ Fragrance from awin.com -->
-
-<a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628136&v=121156&q=585659&r=2581845">
-    <img src="https://www.awin1.com/cshow.php?s=4628136&v=121156&q=585659&r=2581845" border="0">
-</a>
-
-<!-- END ADVERTISER: YCZ Fragrance from awin.com -->
-<br>
-        
+        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628136&v=121156&q=585659&r=2581845">
+            <img src="https://www.awin1.com/cshow.php?s=4628136&v=121156&q=585659&r=2581845" border="0">
+        </a>
+        <br><br>
         POPI ACT COMPLIANCE: Professional standards. No data storage.
         <br>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--gold)">Official Portal</a>
     </footer>
@@ -213,10 +196,13 @@
 
         function rotateChoice() {
             const pick = products[Math.floor(Math.random() * products.length)];
-            document.getElementById('choice-display').innerHTML = `
-                <p style="font-size: 1.5rem; margin-bottom: 5px;"><strong>${pick.name}</strong></p>
-                <p style="font-style: italic;">"${pick.desc}"</p>
-            `;
+            const display = document.getElementById('choice-display');
+            if(display) {
+                display.innerHTML = `
+                    <p style="font-size: 1.5rem; margin-bottom: 5px;"><strong>${pick.name}</strong></p>
+                    <p style="font-style: italic;">"${pick.desc}"</p>
+                `;
+            }
         }
         window.onload = rotateChoice;
     </script>
