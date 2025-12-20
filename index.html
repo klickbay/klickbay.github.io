@@ -22,57 +22,27 @@
             background-position: center;
             color: #ffffff;
             font-family: 'Times New Roman', Times, serif;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px #000;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevents side-scrolling */
         }
 
-        /* --- LATERAL IMAGE LAYOUT --- */
-        .ycz-banner-row {
-            display: flex;
-            justify-content: center; /* Centers the group */
-            align-items: center;
-            gap: 15px;              /* Space between pictures */
-            padding: 20px 5%;
-            flex-wrap: nowrap;      /* Keeps them in one line */
-        }
-
-        .ycz-banner-row a {
-            flex: 1;                /* Forces all three to take equal width */
-            max-width: 350px;       /* Limits size on big screens */
-        }
-
-        .ycz-banner-row img {
-            width: 100%;            /* Fills the equal-width link container */
-            height: 200px;          /* Forces same height for all */
-            object-fit: cover;      /* Crops image to fit height without stretching */
-            border-radius: 15px;    /* Rounded corners */
-            border: 1px solid var(--gold);
-            display: block;
-        }
-
-        /* Responsive: Stack them only on very small mobile screens if they get too squashed */
-        @media (max-width: 600px) {
-            .ycz-banner-row { flex-wrap: wrap; }
-            .ycz-banner-row a { min-width: 80%; }
-        }
-        /* --------------------------- */
-
-        .logo-header { display: flex; justify-content: center; padding: 60px 0; }
-        .logo-container { position: relative; width: 140px; height: 140px; }
+        /* Logo Responsiveness */
+        .logo-header { display: flex; justify-content: center; padding: 40px 0; overflow: hidden; }
+        .logo-container { position: relative; width: 120px; height: 120px; }
         .logo-img { width: 100%; height: 100%; border-radius: 50%; z-index: 10; position: relative; border: 2px solid var(--gold); }
         
         .saturn-ring {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 280px;
-            height: 90px;
-            margin-left: -140px;
-            margin-top: -45px;
-            border: 18px solid var(--purple);
+            width: 240px;
+            height: 80px;
+            margin-left: -120px;
+            margin-top: -40px;
+            border: 12px solid var(--purple);
             border-radius: 50%;
             transform: rotateX(75deg);
-            box-shadow: 0 0 40px var(--purple);
+            box-shadow: 0 0 30px var(--purple);
             animation: orbit 10s linear infinite;
             z-index: 5;
         }
@@ -82,48 +52,114 @@
             100% { transform: rotateX(75deg) rotateZ(360deg); }
         }
 
+        /* Lateral Banner Row - Responsive */
+        .ycz-banner-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap; /* Allows stacking on small phones */
+        }
+
+        .ycz-banner-row a {
+            flex: 1 1 250px; /* Grows/Shrinks, but tries to stay around 250px */
+            max-width: 350px;
+        }
+
+        .ycz-banner-row img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 1px solid var(--gold);
+            display: block;
+        }
+
+        /* Holiday Vault - Responsive */
         #holiday-vault {
             background: rgba(0, 0, 0, 0.8);
             border: 2px solid #ff0000;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-            margin: 40px 10%;
-            padding: 40px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            padding: 30px 15px;
             text-align: center;
+            box-sizing: border-box;
+        }
+
+        .section-text { 
+            background: rgba(0,0,0,0.7); 
+            margin: 20px auto; 
+            width: 90%;
+            max-width: 1000px;
+            padding: 25px; 
+            border-left: 5px solid var(--gold); 
+            font-size: 1.1rem;
+            box-sizing: border-box;
+        }
+
+        /* Image Grid - Responsive */
+        .grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .porthole {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 8px solid var(--gold);
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+        }
+
+        .porthole img { width: 92%; height: 92%; border-radius: 50%; object-fit: cover; }
+        .screw { position: absolute; color: #333; font-weight: bold; font-size: 16px; }
+        .s-t { top: 2px; } .s-b { bottom: 2px; } .s-l { left: 4px; } .s-r { right: 4px; }
+
+        .footer { 
+            text-align: center; 
+            padding: 40px 20px; 
+            font-size: 0.8rem; 
+            background: #000; 
+        }
+
+        .footer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         .vault-btn {
             background: var(--gold);
             color: black;
-            padding: 15px 30px;
+            padding: 12px 24px;
             border: none;
             cursor: pointer;
             font-weight: bold;
             text-transform: uppercase;
-            transition: 0.3s;
+            width: 100%; /* Full width on mobile */
+            max-width: 300px;
         }
 
-        .vault-btn:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
-
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 40px 5%; }
-        .porthole {
-            position: relative;
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            border: 10px solid var(--gold);
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .porthole { width: 160px; height: 160px; }
+            .section-text { font-size: 1rem; }
+            .saturn-ring { display: none; } /* Hide ring on tiny screens to prevent overflow */
         }
-
-        .porthole img { width: 92%; height: 92%; border-radius: 50%; object-fit: cover; }
-        .screw { position: absolute; color: #333; font-weight: bold; font-size: 20px; }
-        .s-t { top: 2px; } .s-b { bottom: 2px; } .s-l { left: 4px; } .s-r { right: 4px; }
-
-        .section-text { background: rgba(0,0,0,0.7); margin: 20px 10%; padding: 30px; border-left: 5px solid var(--gold); font-size: 1.2rem; }
-        .footer { text-align: center; padding: 40px; font-size: 0.8rem; background: #000; }
     </style>
 </head>
 <body>
@@ -137,15 +173,13 @@
 
     <div class="ycz-banner-row">
         <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845" border="0">
+            <img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845">
         </a>
-
         <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845" border="0">
+            <img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845">
         </a>
-
         <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845" border="0">
+            <img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845">
         </a>
     </div>
 
@@ -153,40 +187,27 @@
         <h2 style="color: var(--gold); margin-top: 0;">CHRISTMAS RESERVE UNLOCKED</h2>
         <p>Accessing the seasonal high-concentration specials for YCZ collectors.</p>
         <div id="vault-content">
-            <button class="btn-directive" onclick="unlockVault()">Unlock Seasonal Offers</button>
+            <button class="vault-btn" onclick="unlockVault()">Unlock Seasonal Offers</button>
         </div>
     </section>
 
     <div class="section-text">
-        Most people walk into a room and hope to be noticed. A man in YCZ walks into a room and the room adjusts to him. These fragrances aren't "perfume"—they are a high-concentration statement of intent. They stay on the skin until you decide the night is over.
+        Most people walk into a room and hope to be noticed. A man in YCZ walks into a room and the room adjusts to him. These fragrances aren't "perfume"—they are a high-concentration statement of intent.
     </div>
 
     <div class="grid">
-        <div class="porthole">
-            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
-            <img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg">
-        </div>
-        <div class="porthole">
-            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
-            <img src="2149353108.jpg">
-        </div>
-        <div class="porthole">
-            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
-            <img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg">
-        </div>
-        <div class="porthole">
-            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
-            <img src="7982.jpg">
-        </div>
+        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg"></div>
+        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="2149353108.jpg"></div>
+        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg"></div>
+        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="7982.jpg"></div>
     </div>
 
     <footer class="footer">
         <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628136&v=121156&q=585659&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4628136&v=121156&q=585659&r=2581845" border="0">
+            <img src="https://www.awin1.com/cshow.php?s=4628136&v=121156&q=585659&r=2581845">
         </a>
-        <br><br>
-        POPI ACT COMPLIANCE: Professional standards. No data storage.
-        <br>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--gold)">Official Portal</a>
+        <p>POPI ACT COMPLIANCE: Professional standards.</p>
+        <p>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--gold)">Official Portal</a></p>
     </footer>
 
     <script>
@@ -194,29 +215,10 @@
             document.getElementById('vault-content').innerHTML = `
                 <div style="animation: fadeIn 1s;">
                     <p style="color: #ff0000; font-weight: bold;">[SEASONAL CLEARANCE DETECTED]</p>
-                    <p>Exclusive Christmas Bundles & High-End Lotion Sets are now active.</p>
                     <a href="https://tidd.ly/4j1nPV8" class="vault-btn" style="text-decoration:none; display:inline-block;">Claim Christmas Offers</a>
                 </div>
             `;
         }
-
-        const products = [
-            { name: "The Executive Blend", desc: "Uncompromising presence." },
-            { name: "Midnight Scent Profile", desc: "For when the real work begins." },
-            { name: "Cellular Hydration Tool", desc: "Neutralizing fatigue instantly." }
-        ];
-
-        function rotateChoice() {
-            const pick = products[Math.floor(Math.random() * products.length)];
-            const display = document.getElementById('choice-display');
-            if(display) {
-                display.innerHTML = `
-                    <p style="font-size: 1.5rem; margin-bottom: 5px;"><strong>${pick.name}</strong></p>
-                    <p style="font-style: italic;">"${pick.desc}"</p>
-                `;
-            }
-        }
-        window.onload = rotateChoice;
     </script>
 </body>
 </html>
