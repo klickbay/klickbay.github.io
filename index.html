@@ -26,24 +26,36 @@
             text-shadow: 2px 2px 4px #000;
         }
 
-        /* --- NEW STYLES FOR THE FIRST THREE PICTURES --- */
-        .ycz-banner-container {
+        /* --- LATERAL IMAGE LAYOUT --- */
+        .ycz-banner-row {
             display: flex;
-            flex-direction: column; /* Stack them vertically */
-            align-items: center;    /* Center them horizontally */
-            gap: 20px;              /* Space between them */
-            padding: 20px 0;
+            justify-content: center; /* Centers the group */
+            align-items: center;
+            gap: 15px;              /* Space between pictures */
+            padding: 20px 5%;
+            flex-wrap: nowrap;      /* Keeps them in one line */
         }
 
-        .ycz-banner-container img {
-            width: 80%;             /* Same width for all */
-            max-width: 600px;       /* Prevents them from getting too huge on desktop */
-            height: auto;           /* Maintains aspect ratio */
-            border-radius: 20px;    /* Rounded corners */
-            border: 2px solid var(--gold); /* Optional: adds a border to match your theme */
+        .ycz-banner-row a {
+            flex: 1;                /* Forces all three to take equal width */
+            max-width: 350px;       /* Limits size on big screens */
+        }
+
+        .ycz-banner-row img {
+            width: 100%;            /* Fills the equal-width link container */
+            height: 200px;          /* Forces same height for all */
+            object-fit: cover;      /* Crops image to fit height without stretching */
+            border-radius: 15px;    /* Rounded corners */
+            border: 1px solid var(--gold);
             display: block;
         }
-        /* ---------------------------------------------- */
+
+        /* Responsive: Stack them only on very small mobile screens if they get too squashed */
+        @media (max-width: 600px) {
+            .ycz-banner-row { flex-wrap: wrap; }
+            .ycz-banner-row a { min-width: 80%; }
+        }
+        /* --------------------------- */
 
         .logo-header { display: flex; justify-content: center; padding: 60px 0; }
         .logo-container { position: relative; width: 140px; height: 140px; }
@@ -123,7 +135,7 @@
         </div>
     </div>
 
-    <div class="ycz-banner-container">
+    <div class="ycz-banner-row">
         <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845">
             <img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845" border="0">
         </a>
