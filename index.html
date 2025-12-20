@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Vr3vfZRPlSWeJKAkMtCXfzVdE2b8X2zevPUxyWKC2H0" />
-    <title>Klickbay | Professional Grade Luxury</title>
+    <title>Klickbay | The YCZ Legend</title>
     
     <style>
         :root {
             --gold: #c5a059;
             --purple: #6a0dad;
-            --overlay: rgba(0, 0, 0, 0.75);
+            /* Lightened overlay from 0.75 to 0.45 for background visibility */
+            --overlay: rgba(0, 0, 0, 0.45); 
         }
 
         body {
             margin: 0;
-            padding: 0;
-            /* Second Picture: Man with surfboard as body background */
             background: linear-gradient(var(--overlay), var(--overlay)), 
                         url('2148021597.jpg'); 
             background-size: cover;
@@ -25,29 +24,14 @@
             color: #ffffff;
             font-family: 'Times New Roman', Times, serif;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 4px #000; /* Ensures text stays sharp over background */
         }
 
         /* Animated Thick Saturn Rings */
-        .logo-header {
-            display: flex;
-            justify-content: center;
-            padding: 60px 0;
-        }
-
-        .logo-container {
-            position: relative;
-            width: 140px;
-            height: 140px;
-        }
-
-        .logo-img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            z-index: 10;
-            position: relative;
-        }
-
+        .logo-header { display: flex; justify-content: center; padding: 60px 0; }
+        .logo-container { position: relative; width: 140px; height: 140px; }
+        .logo-img { width: 100%; height: 100%; border-radius: 50%; z-index: 10; position: relative; border: 2px solid var(--gold); }
+        
         .saturn-ring {
             position: absolute;
             top: 50%;
@@ -69,77 +53,51 @@
             100% { transform: rotateX(75deg) rotateZ(360deg); }
         }
 
-        /* Porthole Images with Screws */
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px;
-            padding: 50px 5%;
+        /* Holiday Vault Interactive Section */
+        #holiday-vault {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #ff0000; /* Subtle Christmas Red hint */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            margin: 40px 10%;
+            padding: 40px;
+            text-align: center;
         }
 
+        .vault-btn {
+            background: var(--gold);
+            color: black;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .vault-btn:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
+
+        /* Porthole Images with Nautical Screws */
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 40px 5%; }
         .porthole {
             position: relative;
-            width: 260px;
-            height: 260px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
-            border: 12px solid var(--gold);
+            border: 10px solid var(--gold);
             background: #000;
-            box-shadow: inset 0 0 20px #000, 0 10px 30px rgba(0,0,0,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: visible;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
 
-        /* Nautical Screws */
-        .porthole::before, .porthole::after {
-            content: "•";
-            position: absolute;
-            color: #444;
-            font-size: 24px;
-            font-family: Arial;
-            text-shadow: 1px 1px 1px rgba(255,255,255,0.2);
-        }
+        .porthole img { width: 92%; height: 92%; border-radius: 50%; object-fit: cover; }
+        .screw { position: absolute; color: #333; font-weight: bold; font-size: 20px; }
+        .s-t { top: 2px; } .s-b { bottom: 2px; } .s-l { left: 4px; } .s-r { right: 4px; }
 
-        /* Screw Placement (Top, Bottom, Left, Right) */
-        .screw-tl { position: absolute; top: 2px; left: 50%; transform: translateX(-50%); color: #333; font-weight: bold;}
-        .screw-bl { position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); color: #333; font-weight: bold;}
-        .screw-l { position: absolute; left: 2px; top: 50%; transform: translateY(-50%); color: #333; font-weight: bold;}
-        .screw-r { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); color: #333; font-weight: bold;}
-
-        .porthole img {
-            width: 90%;
-            height: 90%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* Content Sections */
-        .section-text {
-            background: rgba(0,0,0,0.6);
-            margin: 20px 10%;
-            padding: 40px;
-            border-left: 5px solid var(--gold);
-            font-size: 1.3rem;
-            line-height: 1.8;
-        }
-
-        .btn-action {
-            display: block;
-            width: fit-content;
-            margin: 40px auto;
-            background: var(--gold);
-            color: #000;
-            padding: 20px 50px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .footer { text-align: center; padding: 60px; font-size: 0.8rem; opacity: 0.6; }
-
+        .section-text { background: rgba(0,0,0,0.7); margin: 20px 10%; padding: 30px; border-left: 5px solid var(--gold); font-size: 1.2rem; }
+        
+        .footer { text-align: center; padding: 40px; font-size: 0.8rem; background: #000; }
     </style>
 </head>
 <body>
@@ -151,62 +109,76 @@
         </div>
     </div>
 
+    <section id="holiday-vault">
+        <h2 style="color: var(--gold); margin-top: 0;">CHRISTMAS RESERVE UNLOCKED</h2>
+        <p>Accessing the seasonal high-concentration specials for YCZ collectors.</p>
+        <div id="vault-content">
+            <button class="btn-directive" onclick="unlockVault()">Unlock Seasonal Offers</button>
+        </div>
+    </section>
+
     <div class="section-text">
         Most people walk into a room and hope to be noticed. A man in YCZ walks into a room and the room adjusts to him. These fragrances aren't "perfume"—they are a high-concentration statement of intent. They stay on the skin until you decide the night is over.
     </div>
 
     <div class="grid">
         <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
             <img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg">
         </div>
         <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
-            <img src="2148021597.jpg">
-        </div>
-        <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
             <img src="2149353108.jpg">
         </div>
         <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
             <img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg">
         </div>
-    </div>
-
-    <div class="section-text">
-        Most designer fragrances are a beginner’s mistake—water and alcohol that evaporate before lunch. Because YCZ utilizes professional-grade concentrations, one bottle outlasts two bottles of a standard competitor.
-    </div>
-
-    <div class="grid">
         <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span>
             <img src="7982.jpg">
         </div>
-        <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
-            <img src="14.jpeg">
-        </div>
-        <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
-            <img src="1_1ae667ec-988b-4e6c-98d7-98084c4aa2b1.jpeg">
-        </div>
-        <div class="porthole">
-            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
-            <img src="5_fa4b3780-63fa-4086-96ab-df93c9780c36.jpeg">
-        </div>
     </div>
 
     <div class="section-text">
-        The skincare products are multi-functional, targeting fatigue and environmental damage in a single application. It solves the "tired look" associated with high-stress careers by focusing on deep cellular hydration.
+        One bottle of YCZ outlasts two bottles of a standard competitor. Don’t pay for the air; pay for the oil.
     </div>
 
-    <a href="https://tidd.ly/4j1nPV8" class="btn-action">Claim Your Signature</a>
+    <section id="legends-choice" style="background: rgba(197, 160, 89, 0.15); border: 1px solid var(--gold); margin: 20px 10%; padding: 30px; text-align: center;">
+        <h3 style="color: var(--gold); text-transform: uppercase;">The Legend's Choice</h3>
+        <div id="choice-display"></div>
+    </section>
 
     <footer class="footer">
-        POPI ACT COMPLIANCE: Professional standards. No data storage. Regulatory transparent.
-        <br>© 2024 Klickbay
+        POPI ACT COMPLIANCE: Professional standards. No data storage.
+        <br>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--gold)">Official Portal</a>
     </footer>
 
+    <script>
+        function unlockVault() {
+            document.getElementById('vault-content').innerHTML = `
+                <div style="animation: fadeIn 1s;">
+                    <p style="color: #ff0000; font-weight: bold;">[SEASONAL CLEARANCE DETECTED]</p>
+                    <p>Exclusive Christmas Bundles & High-End Lotion Sets are now active.</p>
+                    <a href="https://tidd.ly/4j1nPV8" class="vault-btn" style="text-decoration:none; display:inline-block;">Claim Christmas Offers</a>
+                </div>
+            `;
+        }
+
+        const products = [
+            { name: "The Executive Blend", desc: "Uncompromising presence." },
+            { name: "Midnight Scent Profile", desc: "For when the real work begins." },
+            { name: "Cellular Hydration Tool", desc: "Neutralizing fatigue instantly." }
+        ];
+
+        function rotateChoice() {
+            const pick = products[Math.floor(Math.random() * products.length)];
+            document.getElementById('choice-display').innerHTML = `
+                <p style="font-size: 1.5rem; margin-bottom: 5px;"><strong>${pick.name}</strong></p>
+                <p style="font-style: italic;">"${pick.desc}"</p>
+            `;
+        }
+        window.onload = rotateChoice;
+    </script>
 </body>
 </html>
