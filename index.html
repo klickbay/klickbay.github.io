@@ -4,37 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Vr3vfZRPlSWeJKAkMtCXfzVdE2b8X2zevPUxyWKC2H0" />
-    <title>Klickbay | YCZ Professional Standards</title>
+    <title>Klickbay | Professional Grade Luxury</title>
     
     <style>
         :root {
             --gold: #c5a059;
             --purple: #6a0dad;
-            --bg: #000000;
+            --overlay: rgba(0, 0, 0, 0.75);
         }
 
         body {
             margin: 0;
-            background-color: var(--bg);
+            padding: 0;
+            /* Second Picture: Man with surfboard as body background */
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('2148021597.jpg'); 
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
             color: #ffffff;
             font-family: 'Times New Roman', Times, serif;
             letter-spacing: 1px;
-            line-height: 1.6;
         }
 
-        /* Saturn Ring - Thickened Authority */
-        .header-logo {
+        /* Animated Thick Saturn Rings */
+        .logo-header {
             display: flex;
             justify-content: center;
-            align-items: center;
             padding: 60px 0;
-            position: relative;
         }
 
-        .logo-wrap {
+        .logo-container {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
         }
 
         .logo-img {
@@ -43,186 +46,167 @@
             border-radius: 50%;
             z-index: 10;
             position: relative;
-            object-fit: cover;
         }
 
-        .ring-thick {
+        .saturn-ring {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 260px;
-            height: 80px;
-            margin-left: -130px;
-            margin-top: -40px;
-            border: 18px solid var(--purple); /* Heaviest Ring yet */
+            width: 280px;
+            height: 90px;
+            margin-left: -140px;
+            margin-top: -45px;
+            border: 18px solid var(--purple);
             border-radius: 50%;
             transform: rotateX(75deg);
             box-shadow: 0 0 40px var(--purple);
-            animation: rotate8s linear infinite;
+            animation: orbit 10s linear infinite;
             z-index: 5;
         }
 
-        @keyframes rotate {
+        @keyframes orbit {
             0% { transform: rotateX(75deg) rotateZ(0deg); }
             100% { transform: rotateX(75deg) rotateZ(360deg); }
         }
 
-        /* Hero Image */
-        .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bride-holds-bottle-parfume-her-tender-arms.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .statement { font-size: 2.8rem; text-transform: uppercase; letter-spacing: 4px; padding: 0 10%; }
-
-        /* Grid - Round Gold Border */
-        .product-grid {
+        /* Porthole Images with Screws */
+        .grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            padding: 80px 5%;
+            gap: 50px;
+            padding: 50px 5%;
         }
 
-        .product-item img {
-            width: 240px;
-            height: 240px;
+        .porthole {
+            position: relative;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
-            border: 8px solid var(--gold); /* Heavy Gold Border */
-            object-fit: contain;
-            background: #050505;
-            padding: 5px;
-        }
-
-        /* Pillar Content */
-        .content-pillar {
-            padding: 80px 15%;
-            text-align: center;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .content-pillar h2 { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; }
-        .content-pillar p { font-size: 1.3rem; max-width: 900px; margin: 0 auto; }
-
-        /* Concierge - The Directive */
-        .concierge-box {
-            max-width: 650px;
-            margin: 100px auto;
-            padding: 50px;
-            background: #080808;
-            border: 1px solid #222;
-        }
-
-        select {
-            width: 100%;
-            padding: 15px;
-            margin: 20px 0;
+            border: 12px solid var(--gold);
             background: #000;
-            color: #fff;
-            border: 1px solid var(--gold);
-            font-size: 1rem;
+            box-shadow: inset 0 0 20px #000, 0 10px 30px rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
         }
 
-        .btn-directive {
+        /* Nautical Screws */
+        .porthole::before, .porthole::after {
+            content: "•";
+            position: absolute;
+            color: #444;
+            font-size: 24px;
+            font-family: Arial;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.2);
+        }
+
+        /* Screw Placement (Top, Bottom, Left, Right) */
+        .screw-tl { position: absolute; top: 2px; left: 50%; transform: translateX(-50%); color: #333; font-weight: bold;}
+        .screw-bl { position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); color: #333; font-weight: bold;}
+        .screw-l { position: absolute; left: 2px; top: 50%; transform: translateY(-50%); color: #333; font-weight: bold;}
+        .screw-r { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); color: #333; font-weight: bold;}
+
+        .porthole img {
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Content Sections */
+        .section-text {
+            background: rgba(0,0,0,0.6);
+            margin: 20px 10%;
+            padding: 40px;
+            border-left: 5px solid var(--gold);
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .btn-action {
+            display: block;
+            width: fit-content;
+            margin: 40px auto;
             background: var(--gold);
             color: #000;
-            padding: 20px;
-            width: 100%;
-            border: none;
+            padding: 20px 50px;
+            text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
-            cursor: pointer;
             letter-spacing: 2px;
         }
 
-        .footer {
-            padding: 50px;
-            text-align: center;
-            color: #444;
-            font-size: 0.8rem;
-            border-top: 1px solid #111;
-        }
+        .footer { text-align: center; padding: 60px; font-size: 0.8rem; opacity: 0.6; }
+
     </style>
 </head>
 <body>
 
-    <div class="header-logo">
-        <div class="logo-wrap">
-            <div class="ring-thick"></div>
-            <img src="Klickbay logo 4c.jpg" class="logo-img" alt="Klickbay">
+    <div class="logo-header">
+        <div class="logo-container">
+            <div class="saturn-ring"></div>
+            <img src="Klickbay logo 4c.jpg" class="logo-img">
         </div>
     </div>
 
-    <section class="hero">
-        <h1 class="statement">Quality isn’t a negotiation.</h1>
-        <p style="font-style: italic; font-size: 1.2rem;">Professional grade reality for those who demand excellence.</p>
-    </section>
-
-    <section class="content-pillar">
-        <h2>The Intent</h2>
-        <p>Most people walk into a room and hope to be noticed. A man in YCZ walks into a room and the room adjusts to him. These fragrances aren't "perfume"—they are a high-concentration statement of intent. When the oils are this pure, they don't fade when the sun goes down. They stay on the skin until you decide the night is over.</p>
-    </section>
-
-    <div class="product-grid">
-        <img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg">
-        <img src="2148021597.jpg">
-        <img src="2149353108.jpg">
-        <img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg">
-        <img src="7982.jpg">
-        <img src="1_1ae667ec-988b-4e6c-98d7-98084c4aa2b1.jpeg">
-        <img src="4_f85ea0e6-aad2-4f12-b136-351270b127ae.jpeg">
+    <div class="section-text">
+        Most people walk into a room and hope to be noticed. A man in YCZ walks into a room and the room adjusts to him. These fragrances aren't "perfume"—they are a high-concentration statement of intent. They stay on the skin until you decide the night is over.
     </div>
 
-    <section class="content-pillar" style="background: #050505;">
-        <h2>The Logic</h2>
-        <p>Most designer fragrances are "Eau de Toilette" or low-concentration "Eau de Parfum," meaning they are diluted with high amounts of alcohol. The product evaporates within hours. One bottle of YCZ outlasts two bottles of a standard competitor.</p>
-    </section>
-
-    <div class="product-grid">
-        <img src="14.jpeg">
-        <img src="1_1406158a-7b99-4e2a-9e5c-4742da28bcaa.jpeg">
-        <img src="4_4fe4a2d9-87f8-44c6-a150-61a93822dcc1.jpeg">
-        <img src="5_dfb60259-21da-4398-9b7e-dcfb93aa11aa.jpeg">
-        <img src="5_fa4b3780-63fa-4086-96ab-df93c9780c36.jpeg">
+    <div class="grid">
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg">
+        </div>
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="2148021597.jpg">
+        </div>
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="2149353108.jpg">
+        </div>
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg">
+        </div>
     </div>
 
-    <section class="content-pillar">
-        <h2>The Maintenance</h2>
-        <p>The skincare products are multi-functional, targeting skin fatigue and environmental damage (pollution/blue light) in a single application. It solves the "tired look" associated with high-stress careers by focusing on deep cellular hydration and reducing inflammation.</p>
-    </section>
+    <div class="section-text">
+        Most designer fragrances are a beginner’s mistake—water and alcohol that evaporate before lunch. Because YCZ utilizes professional-grade concentrations, one bottle outlasts two bottles of a standard competitor.
+    </div>
 
-    <section class="concierge-box">
-        <h3>Product Consultation</h3>
-        <p style="font-size: 0.9rem; color: #888;">State your primary objective for a direct recommendation.</p>
-        <select id="userObj">
-            <option value="scent">Environmental Dominance (Fragrance)</option>
-            <option value="skin">Personal Maintenance (Skincare)</option>
-        </select>
-        <button class="btn-directive" onclick="getDirective()">Receive Directive</button>
-        <div id="display" style="margin-top: 30px; font-style: italic; color: var(--gold); border-left: 2px solid var(--gold); padding-left: 20px;"></div>
-    </section>
+    <div class="grid">
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="7982.jpg">
+        </div>
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="14.jpeg">
+        </div>
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="1_1ae667ec-988b-4e6c-98d7-98084c4aa2b1.jpeg">
+        </div>
+        <div class="porthole">
+            <span class="screw-tl">+</span><span class="screw-bl">+</span><span class="screw-l">+</span><span class="screw-r">+</span>
+            <img src="5_fa4b3780-63fa-4086-96ab-df93c9780c36.jpeg">
+        </div>
+    </div>
+
+    <div class="section-text">
+        The skincare products are multi-functional, targeting fatigue and environmental damage in a single application. It solves the "tired look" associated with high-stress careers by focusing on deep cellular hydration.
+    </div>
+
+    <a href="https://tidd.ly/4j1nPV8" class="btn-action">Claim Your Signature</a>
 
     <footer class="footer">
-        <p>POPI ACT COMPLIANCE: Integrity is our standard. We do not store personal data. Your privacy is managed according to South African regulatory standards.</p>
-        <p>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--gold)">Official YCZ Access</a></p>
+        POPI ACT COMPLIANCE: Professional standards. No data storage. Regulatory transparent.
+        <br>© 2024 Klickbay
     </footer>
 
-    <script>
-        function getDirective() {
-            const val = document.getElementById('userObj').value;
-            let msg = (val === 'scent') 
-                ? "<b>The Directive:</b> High-Concentration Essential Oils. Leave a footprint in the room. One application. Twelve hours of presence." 
-                : "<b>The Directive:</b> Deep Cellular Hydration. Looking tired is a choice. This is the maintenance required to keep the edge.";
-            document.getElementById('display').innerHTML = msg + `<br><br><a href="https://tidd.ly/4j1nPV8" style="color:#fff; text-transform: uppercase; font-size: 0.7rem;">Secure Specification →</a>`;
-        }
-    </script>
 </body>
 </html>
