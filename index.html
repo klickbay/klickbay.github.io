@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,7 @@
         :root {
             --gold: #c5a059;
             --brand-green: #27ae60; 
+            --ocean-blue: #0077be;
             --overlay: rgba(0, 0, 0, 0.7); 
         }
 
@@ -30,10 +30,10 @@
             gap: 30px;
             padding: 15px;
             background: rgba(0, 0, 0, 0.9);
-            border-bottom: 2px solid var(--brand-green);
+            border-bottom: 2px solid var(--ocean-blue);
         }
         .nav-bar a { color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
-        .nav-bar a:hover { color: var(--brand-green); }
+        .nav-bar a:hover { color: var(--ocean-blue); }
 
         /* Logo Header */
         .logo-header { display: flex; justify-content: center; padding: 40px 0; }
@@ -50,14 +50,22 @@
         
         .saturn-ring {
             position: absolute; top: 50%; left: 50%; width: 110px; height: 35px;
-            margin-left: -55px; margin-top: -17.5px; border: 4px solid var(--brand-green);
-            border-radius: 50%; transform: rotateX(75deg); box-shadow: 0 0 15px var(--brand-green);
-            animation: orbit 10s linear infinite; z-index: 5;
+            margin-left: -55px; margin-top: -17.5px; border: 4px solid var(--ocean-blue);
+            border-radius: 50%; transform: rotateX(75deg); 
+            box-shadow: 0 0 15px var(--ocean-blue);
+            animation: orbit 10s linear infinite, wavePulse 3s ease-in-out infinite; 
+            z-index: 5;
         }
 
         @keyframes orbit {
             0% { transform: rotateX(75deg) rotateZ(0deg); }
             100% { transform: rotateX(75deg) rotateZ(360deg); }
+        }
+
+        /* Wave Pulse Animation */
+        @keyframes wavePulse {
+            0%, 100% { opacity: 0.6; box-shadow: 0 0 5px var(--ocean-blue); }
+            50% { opacity: 1; box-shadow: 0 0 25px var(--ocean-blue); }
         }
 
         .promo-section { text-align: center; padding: 40px 20px; }
@@ -74,8 +82,9 @@
         .tagline-middle {
             font-style: italic; font-size: 1.4rem; color: var(--gold);
             margin: 60px auto; max-width: 800px; padding: 30px 0;
-            border-top: 1px solid rgba(197, 160, 89, 0.3);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            border-top: 3px solid var(--ocean-blue);
+            border-bottom: 3px solid var(--ocean-blue);
+            animation: wavePulse 4s ease-in-out infinite;
         }
 
         .promo-grid {
@@ -92,7 +101,7 @@
             aspect-ratio: 1 / 1;
         }
 
-        /* Screws */
+        /* Nautical Screws */
         .img-container::before, .img-container::after {
             content: ""; position: absolute; width: 8px; height: 8px; background: #444; border-radius: 50%; z-index: 20;
         }
@@ -108,7 +117,11 @@
         }
         .shop-btn:hover { background: #219150; }
 
-        .footer { text-align: center; padding: 60px 20px; background: #000; font-size: 0.8rem; border-top: 1px solid var(--brand-green); }
+        .footer { 
+            text-align: center; padding: 60px 20px; background: #000; font-size: 0.8rem; 
+            border-top: 2px solid var(--ocean-blue); 
+            animation: wavePulse 5s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>
@@ -142,7 +155,7 @@
             </div>
 
             <div class="promo-card">
-                <div class="img-container"><img src="MensPerfume.jpeg" alt="Men's Fragrance"></div>
+                <div class="img-container"><img src="2275.jpg" alt="Featured Fragrance"></div>
                 <a href="#" class="shop-btn">Shop Scent</a>
             </div>
 
@@ -183,7 +196,7 @@
 
             <div class="promo-card">
                 <a href="https://tidd.ly/4j1nPV8">
-                    <div class="img-container"><img src="YCZ" alt="YCZ Brand"></div>
+                    <div class="img-container"><img src="Gemini_Generated_Image_75npon75npon75np.png" alt="YCZ Special Brand"></div>
                 </a>
                 <a href="https://tidd.ly/4j1nPV8" class="shop-btn">Discover YCZ</a>
             </div>
@@ -191,7 +204,7 @@
     </div>
 
     <footer class="footer">
-        <p>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--brand-green)">Official Portal</a></p>
+        <p>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--ocean-blue)">Official Portal</a></p>
     </footer>
 
 </body>
