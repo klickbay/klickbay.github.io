@@ -15,7 +15,6 @@
 
         body {
             margin: 0;
-            /* Original Background Preserved */
             background: linear-gradient(var(--overlay), var(--overlay)), url('2148021597.jpg'); 
             background-size: cover;
             background-attachment: fixed;
@@ -50,19 +49,10 @@
         }
         
         .saturn-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 110px; 
-            height: 35px;
-            margin-left: -55px;
-            margin-top: -17.5px;
-            border: 4px solid var(--brand-green);
-            border-radius: 50%;
-            transform: rotateX(75deg);
-            box-shadow: 0 0 15px var(--brand-green);
-            animation: orbit 10s linear infinite;
-            z-index: 5;
+            position: absolute; top: 50%; left: 50%; width: 110px; height: 35px;
+            margin-left: -55px; margin-top: -17.5px; border: 4px solid var(--brand-green);
+            border-radius: 50%; transform: rotateX(75deg); box-shadow: 0 0 15px var(--brand-green);
+            animation: orbit 10s linear infinite; z-index: 5;
         }
 
         @keyframes orbit {
@@ -72,88 +62,49 @@
 
         .promo-section { text-align: center; padding: 40px 20px; }
 
-        .tagline-middle {
-            font-style: italic;
-            font-size: 1.4rem;
-            color: var(--gold);
-            margin: 60px auto;
+        .about-ycz {
             max-width: 800px;
+            margin: 0 auto 50px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--gold);
+            text-align: left;
+        }
+
+        .tagline-middle {
+            font-style: italic; font-size: 1.4rem; color: var(--gold);
+            margin: 60px auto; max-width: 800px; padding: 30px 0;
             border-top: 1px solid rgba(197, 160, 89, 0.3);
             border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            padding: 30px 0;
         }
 
-        /* Porthole Promo Cards */
         .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px; max-width: 1200px; margin: 0 auto;
         }
 
-        .promo-card {
-            position: relative;
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-
+        .promo-card { position: relative; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; transition: transform 0.3s; }
         .promo-card:hover { transform: translateY(-10px); }
 
-        /* Thick Gold Border with Screws */
         .img-container {
-            position: relative;
-            border: 8px solid var(--gold); /* Thicker Gold Border */
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            aspect-ratio: 1 / 1; /* Fixes Distortion */
+            position: relative; border: 8px solid var(--gold); border-radius: 12px;
+            overflow: hidden; margin-bottom: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            aspect-ratio: 1 / 1;
         }
 
-        /* Nautical Screws (dots in corners) */
+        /* Screws */
         .img-container::before, .img-container::after {
-            content: "";
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #444; /* Screw color */
-            border-radius: 50%;
-            z-index: 20;
-            box-shadow: inset 1px 1px 2px #000;
+            content: ""; position: absolute; width: 8px; height: 8px; background: #444; border-radius: 50%; z-index: 20;
         }
-        /* Top Screws */
-        .img-container::before {
-            top: 5px;
-            left: 5px;
-            box-shadow: 250px 0px 0px #444; /* Right screw */
-        }
-        /* Bottom Screws */
-        .img-container::after {
-            bottom: 5px;
-            left: 5px;
-            box-shadow: 250px 0px 0px #444; /* Right screw */
-        }
+        .img-container::before { top: 5px; left: 5px; box-shadow: 245px 0px 0px #444; }
+        .img-container::after { bottom: 5px; left: 5px; box-shadow: 245px 0px 0px #444; }
 
-        .promo-card img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; /* Prevents stretching */
-            display: block;
-        }
+        .promo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
         
         .shop-btn {
-            display: inline-block;
-            background: var(--brand-green);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: background 0.3s;
+            display: inline-block; background: var(--brand-green); color: white;
+            padding: 12px 25px; text-decoration: none; border-radius: 5px;
+            font-weight: bold; margin-top: 10px; transition: background 0.3s;
         }
         .shop-btn:hover { background: #219150; }
 
@@ -176,15 +127,18 @@
 
     <div class="promo-section">
         <h1 style="color: var(--brand-green);">Premium Selections</h1>
-        <p style="max-width: 700px; margin: 0 auto 40px auto; font-size: 1.1rem;">
-            Classic fragrances and grooming essentials, hand-selected for those who value quality. 
-            It’s about the confidence that comes from the right finishing touches.
-        </p>
         
+        <div class="about-ycz">
+            <h3 style="color: var(--gold); margin-top: 0;">The YCZ Standard</h3>
+            <p>YCZ Fragrances is defined by the art of the "Invisible Suit." Specializing in niche, high-concentration extraits and premium grooming, YCZ offers scents that are engineered for longevity and presence. Every bottle represents a commitment to sophisticated, hand-selected ingredients designed for those who demand a fragrance that works as hard as they do.</p>
+        </div>
+
         <div class="promo-grid">
             <div class="promo-card">
-                <div class="img-container"><img src="HowTheEyecreamWorks.jpeg" alt="Eyecream Details"></div>
-                <a href="#" class="shop-btn">Learn More</a>
+                <a href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845">
+                    <div class="img-container"><img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845"></div>
+                </a>
+                <a href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845" class="shop-btn">View YCZ Best Sellers</a>
             </div>
 
             <div class="promo-card">
@@ -193,8 +147,10 @@
             </div>
 
             <div class="promo-card">
-                <div class="img-container"><img src="WomanSprayingPerfume.jpg" alt="Women's Fragrance"></div>
-                <a href="#" class="shop-btn">Explore Scent</a>
+                <a href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845">
+                    <div class="img-container"><img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845"></div>
+                </a>
+                <a href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845" class="shop-btn">Shop YCZ Clearance</a>
             </div>
 
             <div class="promo-card">
@@ -214,8 +170,10 @@
             </div>
 
             <div class="promo-card">
-                <div class="img-container"><img src="marinePerfumeForMen.jpeg" alt="Marine Perfume"></div>
-                <a href="#" class="shop-btn">Shop Marine</a>
+                <a href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845">
+                    <div class="img-container"><img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845"></div>
+                </a>
+                <a href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845" class="shop-btn">Explore YCZ Scents</a>
             </div>
 
             <div class="promo-card">
@@ -224,8 +182,10 @@
             </div>
 
             <div class="promo-card">
-                <div class="img-container"><img src="YCZ" alt="YCZ Brand"></div>
-                <a href="#" class="shop-btn">Discover YCZ</a>
+                <a href="https://tidd.ly/4j1nPV8">
+                    <div class="img-container"><img src="YCZ" alt="YCZ Brand"></div>
+                </a>
+                <a href="https://tidd.ly/4j1nPV8" class="shop-btn">Discover YCZ</a>
             </div>
         </div>
     </div>
