@@ -3,69 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="Vr3vfZRPlSWeJKAkMtCXfzVdE2b8X2zevPUxyWKC2H0" />
-    <title>Klickbay | The YCZ Legend</title>
+    <title>Klickbay | Curated Excellence</title>
     
     <style>
         :root {
             --gold: #c5a059;
-            --purple: #6a0dad;
-            --overlay: rgba(0, 0, 0, 0.45); 
+            --purple: #8e44ad; /* Vibrant Purple */
+            --overlay: rgba(0, 0, 0, 0.6); 
         }
 
         body {
             margin: 0;
-            background: linear-gradient(var(--overlay), var(--overlay)), 
-                        url('2148021597.jpg'); 
+            background: linear-gradient(var(--overlay), var(--overlay)), url('2148021597.jpg'); 
             background-size: cover;
             background-attachment: fixed;
-            background-position: center;
             color: #ffffff;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Navigation Bar */
+        /* Navigation */
         .nav-bar {
             display: flex;
             justify-content: center;
             gap: 30px;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.6);
-            border-bottom: 1px solid var(--gold);
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid var(--purple);
         }
+        .nav-bar a { color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-bar a:hover { color: var(--purple); }
 
-        .nav-bar a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-bar a:hover {
-            color: var(--gold);
-        }
-
-        /* Logo Responsiveness */
-        .logo-header { display: flex; justify-content: center; padding: 40px 0; overflow: hidden; }
-        .logo-container { position: relative; width: 120px; height: 120px; }
-        .logo-img { width: 100%; height: 100%; border-radius: 50%; z-index: 10; position: relative; border: 2px solid var(--gold); }
+        /* Smaller Purple Logo */
+        .logo-header { display: flex; justify-content: center; padding: 20px 0; }
+        .logo-container { position: relative; width: 60px; height: 60px; } /* Half Size */
+        .logo-img { width: 100%; height: 100%; border-radius: 50%; z-index: 10; position: relative; border: 2px solid var(--purple); }
         
         .saturn-ring {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 240px;
-            height: 80px;
-            margin-left: -120px;
-            margin-top: -40px;
-            border: 12px solid var(--purple);
+            width: 120px; /* Adjusted for smaller logo */
+            height: 40px;
+            margin-left: -60px;
+            margin-top: -20px;
+            border: 6px solid var(--purple);
             border-radius: 50%;
             transform: rotateX(75deg);
-            box-shadow: 0 0 30px var(--purple);
+            box-shadow: 0 0 15px var(--purple);
             animation: orbit 10s linear infinite;
             z-index: 5;
         }
@@ -75,110 +60,37 @@
             100% { transform: rotateX(75deg) rotateZ(360deg); }
         }
 
-        .ycz-banner-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        .ycz-banner-row a {
-            flex: 1 1 250px;
-            max-width: 350px;
-        }
-
-        .ycz-banner-row img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 1px solid var(--gold);
-            display: block;
-        }
-
-        #holiday-vault {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #ff0000;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 800px;
-            padding: 30px 15px;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .section-text { 
-            background: rgba(0,0,0,0.7); 
-            margin: 20px auto; 
-            width: 90%;
-            max-width: 1000px;
-            padding: 25px; 
-            border-left: 5px solid var(--gold); 
-            font-size: 1.1rem;
-            box-sizing: border-box;
-        }
-
-        .grid { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 20px; 
-            padding: 20px;
-            max-width: 1200px;
+        /* Improved Affiliate Grid */
+        .promo-section { text-align: center; padding: 40px 20px; }
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-
-        .porthole {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 8px solid var(--gold);
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+        .promo-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 15px;
+            transition: transform 0.3s;
         }
-
-        .porthole img { width: 92%; height: 92%; border-radius: 50%; object-fit: cover; }
-        .screw { position: absolute; color: #333; font-weight: bold; font-size: 16px; }
-        .s-t { top: 2px; } .s-b { bottom: 2px; } .s-l { left: 4px; } .s-r { right: 4px; }
-
-        .footer { 
-            text-align: center; 
-            padding: 40px 20px; 
-            font-size: 0.8rem; 
-            background: #000; 
-        }
-
-        .footer img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .vault-btn {
-            background: var(--gold);
-            color: black;
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
+        .promo-card:hover { transform: translateY(-5px); border-color: var(--purple); }
+        .promo-card img { width: 100%; border-radius: 8px; margin-bottom: 15px; }
+        
+        .shop-btn {
+            display: inline-block;
+            background: var(--purple);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
-            text-transform: uppercase;
-            width: 100%;
-            max-width: 300px;
+            margin-top: 10px;
         }
 
-        @media (max-width: 480px) {
-            .porthole { width: 160px; height: 160px; }
-            .section-text { font-size: 1rem; }
-            .saturn-ring { display: none; }
-        }
+        .footer { text-align: center; padding: 60px 20px; background: #000; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -195,54 +107,37 @@
         </div>
     </div>
 
-    <div class="ycz-banner-row">
-        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845">
-        </a>
-        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845">
-        </a>
-        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845">
-        </a>
-    </div>
+    <div class="promo-section">
+        <h1 style="color: var(--purple);">Premium Selections</h1>
+        <p>Hand-picked luxury essentials for the modern professional.</p>
+        
+        <div class="promo-grid">
+            <div class="promo-card">
+                <a href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845">
+                    <img src="https://www.awin1.com/cshow.php?s=4631391&v=121156&q=592001&r=2581845">
+                </a>
+                <a href="https://www.awin1.com/cread.php?s=4631391&v=121156&q=592001&r=2581845" class="shop-btn">View Collection</a>
+            </div>
 
-    <section id="holiday-vault">
-        <h2 style="color: var(--gold); margin-top: 0;">CHRISTMAS RESERVE UNLOCKED</h2>
-        <p>Accessing the seasonal high-concentration specials for YCZ collectors.</p>
-        <div id="vault-content">
-            <button class="vault-btn" onclick="unlockVault()">Unlock Seasonal Offers</button>
+            <div class="promo-card">
+                <a href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845">
+                    <img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845">
+                </a>
+                <a href="https://www.awin1.com/cread.php?s=4628119&v=121156&q=585659&r=2581845" class="shop-btn">Shop Clearance</a>
+            </div>
+
+            <div class="promo-card">
+                <a href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845">
+                    <img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845">
+                </a>
+                <a href="https://www.awin1.com/cread.php?s=4624568&v=121156&q=585616&r=2581845" class="shop-btn">Explore More</a>
+            </div>
         </div>
-    </section>
-
-    <div class="section-text">
-        Most people walk into a room and hope to be noticed. A man in YCZ walks into a room and the room adjusts to him. These fragrances aren't "perfume"—they are a high-concentration statement of intent.
-    </div>
-
-    <div class="grid">
-        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="1000X1000_22fe6e3d-27bb-4a73-a649-081870480989.jpeg"></div>
-        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="2149353108.jpg"></div>
-        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg"></div>
-        <div class="porthole"><span class="screw s-t">+</span><span class="screw s-b">+</span><span class="screw s-l">+</span><span class="screw s-r">+</span><img src="7982.jpg"></div>
     </div>
 
     <footer class="footer">
-        <a rel="sponsored" href="https://www.awin1.com/cread.php?s=4628136&v=121156&q=585659&r=2581845">
-            <img src="https://www.awin1.com/cshow.php?s=4628136&v=121156&q=585659&r=2581845">
-        </a>
-        <p>POPI ACT COMPLIANCE: Professional standards.</p>
-        <p>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--gold)">Official Portal</a></p>
+        <p>© 2024 Klickbay | <a href="https://tidd.ly/4j1nPV8" style="color:var(--purple)">Official Portal</a></p>
     </footer>
 
-    <script>
-        function unlockVault() {
-            document.getElementById('vault-content').innerHTML = `
-                <div style="animation: fadeIn 1s;">
-                    <p style="color: #ff0000; font-weight: bold;">[SEASONAL CLEARANCE DETECTED]</p>
-                    <a href="https://tidd.ly/4j1nPV8" class="vault-btn" style="text-decoration:none; display:inline-block;">Claim Christmas Offers</a>
-                </div>
-            `;
-        }
-    </script>
 </body>
 </html>
