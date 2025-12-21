@@ -9,12 +9,13 @@
     <style>
         :root {
             --gold: #c5a059;
-            --brand-green: #27ae60; /* Changed from Purple to Green */
+            --brand-green: #27ae60; 
             --overlay: rgba(0, 0, 0, 0.7); 
         }
 
         body {
             margin: 0;
+            /* Original Background Preserved */
             background: linear-gradient(var(--overlay), var(--overlay)), url('2148021597.jpg'); 
             background-size: cover;
             background-attachment: fixed;
@@ -35,16 +36,16 @@
         .nav-bar a { color: white; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
         .nav-bar a:hover { color: var(--brand-green); }
 
-        /* Logo Header - Resized & Gold Border */
+        /* Logo Header */
         .logo-header { display: flex; justify-content: center; padding: 40px 0; }
-        .logo-container { position: relative; width: 60px; height: 60px; } /* Half Size */
+        .logo-container { position: relative; width: 60px; height: 60px; } 
         .logo-img { 
             width: 100%; 
             height: 100%; 
             border-radius: 50%; 
             z-index: 10; 
             position: relative; 
-            border: 3px solid var(--gold); /* Gold Border added */
+            border: 3px solid var(--gold);
             box-sizing: border-box;
         }
         
@@ -69,8 +70,8 @@
             100% { transform: rotateX(75deg) rotateZ(360deg); }
         }
 
-        /* Sections */
         .promo-section { text-align: center; padding: 40px 20px; }
+
         .tagline-middle {
             font-style: italic;
             font-size: 1.4rem;
@@ -82,24 +83,66 @@
             padding: 30px 0;
         }
 
-        /* Grid for all images */
+        /* Porthole Promo Cards */
         .promo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .promo-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 15px;
-            transition: all 0.3s;
-            overflow: hidden;
+            position: relative;
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
         }
-        .promo-card:hover { transform: translateY(-5px); border-color: var(--brand-green); background: rgba(255,255,255,0.07); }
-        .promo-card img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+
+        .promo-card:hover { transform: translateY(-10px); }
+
+        /* Thick Gold Border with Screws */
+        .img-container {
+            position: relative;
+            border: 8px solid var(--gold); /* Thicker Gold Border */
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            aspect-ratio: 1 / 1; /* Fixes Distortion */
+        }
+
+        /* Nautical Screws (dots in corners) */
+        .img-container::before, .img-container::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #444; /* Screw color */
+            border-radius: 50%;
+            z-index: 20;
+            box-shadow: inset 1px 1px 2px #000;
+        }
+        /* Top Screws */
+        .img-container::before {
+            top: 5px;
+            left: 5px;
+            box-shadow: 250px 0px 0px #444; /* Right screw */
+        }
+        /* Bottom Screws */
+        .img-container::after {
+            bottom: 5px;
+            left: 5px;
+            box-shadow: 250px 0px 0px #444; /* Right screw */
+        }
+
+        .promo-card img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; /* Prevents stretching */
+            display: block;
+        }
         
         .shop-btn {
             display: inline-block;
@@ -140,22 +183,22 @@
         
         <div class="promo-grid">
             <div class="promo-card">
-                <img src="HowTheEyecreamWorks.jpeg" alt="Eyecream Details">
+                <div class="img-container"><img src="HowTheEyecreamWorks.jpeg" alt="Eyecream Details"></div>
                 <a href="#" class="shop-btn">Learn More</a>
             </div>
 
             <div class="promo-card">
-                <img src="MensPerfume.jpeg" alt="Men's Fragrance">
+                <div class="img-container"><img src="MensPerfume.jpeg" alt="Men's Fragrance"></div>
                 <a href="#" class="shop-btn">Shop Scent</a>
             </div>
 
             <div class="promo-card">
-                <img src="WomanSprayingPerfume.jpg" alt="Women's Fragrance">
+                <div class="img-container"><img src="WomanSprayingPerfume.jpg" alt="Women's Fragrance"></div>
                 <a href="#" class="shop-btn">Explore Scent</a>
             </div>
 
             <div class="promo-card">
-                <img src="WomensGiftPack.jpeg" alt="Gift Pack">
+                <div class="img-container"><img src="WomensGiftPack.jpeg" alt="Gift Pack"></div>
                 <a href="#" class="shop-btn">View Gifts</a>
             </div>
         </div>
@@ -166,22 +209,22 @@
 
         <div class="promo-grid">
             <div class="promo-card">
-                <img src="WomensGiftz.jpeg" alt="Collection">
+                <div class="img-container"><img src="WomensGiftz.jpeg" alt="Collection"></div>
                 <a href="#" class="shop-btn">See Collection</a>
             </div>
 
             <div class="promo-card">
-                <img src="marinePerfumeForMen.jpeg" alt="Marine Perfume">
+                <div class="img-container"><img src="marinePerfumeForMen.jpeg" alt="Marine Perfume"></div>
                 <a href="#" class="shop-btn">Shop Marine</a>
             </div>
 
             <div class="promo-card">
-                <img src="YCZ neckCream.jpg" alt="Neck Cream">
+                <div class="img-container"><img src="YCZ neckCream.jpg" alt="Neck Cream"></div>
                 <a href="#" class="shop-btn">Skin Care</a>
             </div>
 
             <div class="promo-card">
-                <img src="YCZ" alt="YCZ Brand">
+                <div class="img-container"><img src="YCZ" alt="YCZ Brand"></div>
                 <a href="#" class="shop-btn">Discover YCZ</a>
             </div>
         </div>
