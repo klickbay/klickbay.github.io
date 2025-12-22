@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +80,7 @@
 
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* --- SKIN ANALYSIS WEB APP SECTION --- */
+        /* Analysis Web App */
         .analysis-container {
             max-width: 800px;
             margin: 40px auto;
@@ -92,38 +91,18 @@
             backdrop-filter: blur(10px);
             text-align: left;
         }
-
         .quiz-step { display: none; }
         .quiz-step.active { display: block; animation: fadeIn 0.5s; }
-
         .quiz-option {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--brand-green);
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-            text-align: left;
-            font-size: 1rem;
+            display: block; width: 100%; padding: 15px; margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1); border: 1px solid var(--brand-green);
+            color: white; cursor: pointer; border-radius: 5px; transition: 0.3s;
         }
+        .quiz-option:hover { background: var(--brand-green); }
+        #quiz-result { display: none; text-align: center; padding: 20px; border-top: 2px solid var(--gold); margin-top: 20px; }
 
-        .quiz-option:hover { background: var(--brand-green); color: white; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        #quiz-result {
-            display: none;
-            text-align: center;
-            padding: 20px;
-            border-top: 2px solid var(--gold);
-            margin-top: 20px;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* --- REST OF STYLES --- */
         .about-ycz {
             max-width: 900px;
             margin: 0 auto 50px;
@@ -132,6 +111,13 @@
             border-left: 4px solid var(--brand-green);
             text-align: left;
             font-size: 1.1rem;
+        }
+
+        .tagline-middle {
+            font-style: italic; font-size: 1.4rem; color: var(--white);
+            margin: 60px auto; max-width: 800px; padding: 30px 0;
+            border-top: 2px solid var(--white);
+            border-bottom: 2px solid var(--white);
         }
 
         .promo-grid {
@@ -179,40 +165,9 @@
         
         <div class="about-ycz">
             <p>Pamper your skin with the highest quality formulation of hyaluronic acid and peptides in non-greasy, fast-absorbing formulas that deliver visible results without the traditional overpriced markup. Being a generation of rational collectors who want products that work as hard as we do, which is exactly why YCZ is gaining traction. In a market where only 14% of people believe higher prices mean better quality, YCZ prioritize proof over prestige.</p>
+            <p>Whether it's the Electric Massage Eye Cream using built-in vibration to boost circulation, or high-concentration Eau de Parfums like Midnight Marine designed for long and strong 6-hour performance, you are investing in products that value results over vanity.</p>
         </div>
 
-        <section id="analysis" class="analysis-container">
-            <h2 style="color: var(--gold); text-align: center;">Skin Analysis Tool</h2>
-            <p style="text-align: center; color: #ccc;">Answer 3 questions for your expert recommendation.</p>
-            
-            <div id="step-1" class="quiz-step active">
-                <h3>1. How does your skin feel midday?</h3>
-                <button class="quiz-option" onclick="nextStep(2, 'oily')">Shiny or greasy all over</button>
-                <button class="quiz-option" onclick="nextStep(2, 'dry')">Tight, flaky, or dull</button>
-                <button class="quiz-option" onclick="nextStep(2, 'combo')">Oily in the T-zone, dry elsewhere</button>
-            </div>
-
-            <div id="step-2" class="quiz-step">
-                <h3>2. What is your primary concern?</h3>
-                <button class="quiz-option" onclick="nextStep(3, 'aging')">Fine lines and loss of firmness</button>
-                <button class="quiz-option" onclick="nextStep(3, 'eyes')">Dark circles and puffiness</button>
-                <button class="quiz-option" onclick="nextStep(3, 'texture')">Uneven texture and large pores</button>
-            </div>
-
-            <div id="step-3" class="quiz-step">
-                <h3>3. What's your environment like?</h3>
-                <button class="quiz-option" onclick="showResult('office')">Office/AC (Dry air)</button>
-                <button class="quiz-option" onclick="showResult('outdoor')">Outdoor/Active (Sweat & Sun)</button>
-            </div>
-
-            <div id="quiz-result">
-                <h3 id="result-title" style="color: var(--brand-green);"></h3>
-                <p id="result-text"></p>
-                <a href="https://tidd.ly/4j1nPV8" class="shop-btn">Get Your Recommendation</a>
-                <br><br>
-                <button onclick="resetQuiz()" style="background:none; border:none; color:var(--gold); cursor:pointer; text-decoration:underline;">Start Over</button>
-            </div>
-        </section>
         <div class="promo-grid">
             <div class="promo-card">
                 <a href="https://tidd.ly/4j1nPV8">
@@ -220,24 +175,78 @@
                 </a>
                 <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
             </div>
-
             <div class="promo-card">
                 <a href="https://tidd.ly/4j1nPV8">
                     <div class="img-container"><img src="2_7ef95111-859b-401a-b737-b004e1ac7587.jpeg"></div>
                 </a>
                 <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
             </div>
-
             <div class="promo-card">
                 <a href="https://tidd.ly/4j1nPV8">
                     <div class="img-container"><img src="https://www.awin1.com/cshow.php?s=4628119&v=121156&q=585659&r=2581845" class="fit-image"></div>
                 </a>
                 <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
             </div>
-
             <div class="promo-card">
                 <a href="https://tidd.ly/4j1nPV8">
                     <div class="img-container"><img src="WomensGiftPack.jpeg"></div>
+                </a>
+                <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
+            </div>
+        </div>
+
+        <div class="tagline-middle">
+            Hand-picked essentials. Timeless, refined, and beautifully simple. Quality that defines you.
+        </div>
+
+        <section id="analysis" class="analysis-container">
+            <h2 style="color: var(--gold); text-align: center;">Skin Analysis Tool</h2>
+            <div id="step-1" class="quiz-step active">
+                <h3>1. Midday Skin Feel?</h3>
+                <button class="quiz-option" onclick="nextStep(2, 'oily')">Shiny/Greasy</button>
+                <button class="quiz-option" onclick="nextStep(2, 'dry')">Tight/Flaky</button>
+                <button class="quiz-option" onclick="nextStep(2, 'combo')">Combination</button>
+            </div>
+            <div id="step-2" class="quiz-step">
+                <h3>2. Primary Concern?</h3>
+                <button class="quiz-option" onclick="nextStep(3, 'aging')">Aging/Firmness</button>
+                <button class="quiz-option" onclick="nextStep(3, 'eyes')">Eyes/Dark Circles</button>
+            </div>
+            <div id="step-3" class="quiz-step">
+                <h3>3. Daily Environment?</h3>
+                <button class="quiz-option" onclick="showResult('office')">Office/Dry Air</button>
+                <button class="quiz-option" onclick="showResult('outdoor')">Outdoor/Active</button>
+            </div>
+            <div id="quiz-result">
+                <h3 id="result-title" style="color: var(--brand-green);"></h3>
+                <p id="result-text"></p>
+                <a href="https://tidd.ly/4j1nPV8" class="shop-btn">Get Recommendation</a>
+                <br><br><button onclick="resetQuiz()" style="color:var(--gold); background:none; border:none; text-decoration:underline;">Reset</button>
+            </div>
+        </section>
+
+        <div class="promo-grid" style="margin-top:50px;">
+            <div class="promo-card">
+                <a href="https://tidd.ly/4j1nPV8">
+                    <div class="img-container"><img src="WomensGiftz.jpeg"></div>
+                </a>
+                <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
+            </div>
+            <div class="promo-card">
+                <a href="https://tidd.ly/4j1nPV8">
+                    <div class="img-container"><img src="https://www.awin1.com/cshow.php?s=4624568&v=121156&q=585616&r=2581845"></div>
+                </a>
+                <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
+            </div>
+            <div class="promo-card">
+                <a href="https://tidd.ly/4j1nPV8">
+                    <div class="img-container"><img src="YCZ neckCream.jpg"></div>
+                </a>
+                <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
+            </div>
+            <div class="promo-card">
+                <a href="https://tidd.ly/4j1nPV8">
+                    <div class="img-container"><img src="5_dfb60259-21da-4398-9b7e-dcfb93aa11aa.jpeg"></div>
                 </a>
                 <a href="https://tidd.ly/4j1nPV8" class="shop-btn">SHOP NOW</a>
             </div>
@@ -250,35 +259,24 @@
 
     <script>
         let userChoices = [];
-
         function nextStep(step, choice) {
             userChoices.push(choice);
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
             document.getElementById('step-' + step).classList.add('active');
         }
-
         function showResult(lastChoice) {
             userChoices.push(lastChoice);
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-            const resultDiv = document.getElementById('quiz-result');
-            const title = document.getElementById('result-title');
-            const text = document.getElementById('result-text');
-            
-            resultDiv.style.display = 'block';
-
-            // Simple Logic Tree for Results
+            const res = document.getElementById('quiz-result');
+            res.style.display = 'block';
             if (userChoices.includes('eyes')) {
-                title.innerText = "Target: The Eye Revive";
-                text.innerText = "Based on your concerns, the Electric Massage Eye Cream is your perfect match. The built-in vibration will boost circulation to handle those dark circles.";
-            } else if (userChoices.includes('dry') || userChoices.includes('aging')) {
-                title.innerText = "Target: AH-8 Firming Formula";
-                text.innerText = "Your skin needs high-concentration Hyaluronic acid and Peptides. Our Firming Neck and Face creams provide the deep moisture your environment demands.";
+                document.getElementById('result-title').innerText = "Target: Electric Eye Cream";
+                document.getElementById('result-text').innerText = "Vibrating circulation boost for dark circles.";
             } else {
-                title.innerText = "Target: Midnight Marine Scent-Layering";
-                text.innerText = "Your active lifestyle suits our high-concentration Eau de Parfums. Long-lasting, non-greasy, and authoritative.";
+                document.getElementById('result-title').innerText = "Target: AH-8 Firming Formula";
+                document.getElementById('result-text').innerText = "Deep hydration for firm, refined skin.";
             }
         }
-
         function resetQuiz() {
             userChoices = [];
             document.getElementById('quiz-result').style.display = 'none';
