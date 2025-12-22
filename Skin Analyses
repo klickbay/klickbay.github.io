@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YCZ Skin Analysis Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen font-sans text-gray-800">
+
+    <div class="max-w-2xl mx-auto py-12 px-4">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 tracking-tight">YCZ <span class="font-light text-amber-700">Skin Analysis</span></h1>
+            <p class="mt-2 text-gray-600">Discover your personalized lifting and hydration routine.</p>
+        </div>
+
+        <div id="quiz-card" class="bg-white rounded-3xl shadow-xl p-8 md:p-12 transition-all duration-500">
+            <div id="question-container">
+                <div id="progress-bar" class="w-full bg-gray-100 h-1.5 rounded-full mb-8">
+                    <div id="progress-fill" class="bg-amber-600 h-1.5 rounded-full transition-all duration-300" style="width: 25%"></div>
+                </div>
+                
+                <h2 id="question-text" class="text-2xl font-semibold mb-6">How does your skin feel 30 minutes after washing?</h2>
+                
+                <div id="options" class="space-y-4">
+                    </div>
+            </div>
+
+            <div id="results-container" class="hidden fade-in">
+                <div class="text-center">
+                    <div class="inline-block p-3 rounded-full bg-amber-50 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-2">Your Skin Profile</h2>
+                    <p id="skin-type-display" class="text-xl text-amber-800 font-medium mb-6 uppercase tracking-widest"></p>
+                </div>
+
+                <div class="bg-amber-50 rounded-2xl p-6 mb-8 border border-amber-100">
+                    <h3 class="font-bold text-gray-900 mb-2">Analysis Insight:</h3>
+                    <p id="analysis-text" class="text-gray-700 leading-relaxed"></p>
+                </div>
+
+                <div class="border-t pt-8">
+                    <h3 class="text-lg font-bold mb-4">Recommended YCZ Regimen:</h3>
+                    <div id="product-recommendation" class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="w-32 h-32 bg-gray-200 rounded-xl flex items-center justify-center text-gray-400">
+                            YCZ
+                        </div>
+                        <div>
+                            <h4 id="product-name" class="text-xl font-bold text-gray-900"></h4>
+                            <p id="product-desc" class="text-gray-600 text-sm mt-1 mb-4"></p>
+                            <button class="bg-gray-900 text-white px-6 py-2 rounded-full font-medium hover:bg-black transition">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button onclick="location.reload()" class="mt-10 text-gray-400 hover:text-gray-600 text-sm w-full text-center">Retake Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "How does your skin feel mid-day?",
+                options: [
+                    { text: "Tight or flaky", score: { dry: 2, mature: 1 } },
+                    { text: "Shiny all over", score: { oily: 2 } },
+                    { text: "Oily in T-zone, dry on cheeks", score: { combo: 2 } },
+                    { text: "Comfortable and balanced", score: { normal: 2 } }
+                ]
+            },
+            {
+                question: "What is your primary aging concern?",
+                options: [
+                    { text: "Neck lines & sagging", score: { mature: 3, dry: 1 } },
+                    { text: "Dark circles & eye puffiness", score: { eyes: 3 } },
+                    { text: "Enlarged pores", score: { oily: 2 } },
+                    { text: "I'm focusing on prevention", score: { normal: 1, dry: 1 } }
+                ]
+            },
+            {
+                question: "How does your skin react to the sun?",
+                options: [
+                    { text: "Turns red and feels sensitive", score: { dry: 1, sensitive: 2 } },
+                    { text: "Tans easily, gets oily", score: { oily: 1 } },
+                    { text: "Rarely reacts", score: { normal: 1 } }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let scores = { dry: 0, oily: 0, combo: 0, normal: 0, mature: 0, eyes: 0 };
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question-text').innerText = q.question;
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            // Update progress
+            document.getElementById('progress-fill').style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 border-2 border-gray-100 rounded-xl hover:border-amber-400 hover:bg-amber-50 transition-all duration-200 group flex justify-between items-center";
+                btn.innerHTML = `<span>${opt.text}</span><span class="opacity-0 group-hover:opacity-100 text-amber-600">→</span>`;
+                btn.onclick = () => handleAnswer(opt.score);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function handleAnswer(scoreObj) {
+            for (let key in scoreObj) {
+                scores[key] += scoreObj[key];
+            }
+
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('question-container').classList.add('hidden');
+            document.getElementById('results-container').classList.remove('hidden');
+
+            // Find highest score
+            const primary = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+            
+            const display = document.getElementById('skin-type-display');
+            const analysis = document.getElementById('analysis-text');
+            const pName = document.getElementById('product-name');
+            const pDesc = document.getElementById('product-desc');
+
+            if (primary === 'mature' || scores.mature > 2) {
+                display.innerText = "Mature & Loss of Firmness";
+                analysis.innerText = "Your skin is showing signs of reduced elasticity, particularly in the neck and jawline area. This is common as collagen production slows down.";
+                pName.innerText = "YCZ AH8 Firming Neck Cream";
+                pDesc.innerText = "Powered by Acetyl Hexapeptide-8 to 'freeze' fine lines and Centella Asiatica to lift and firm the neck profile.";
+            } else if (primary === 'eyes') {
+                display.innerText = "Fatigued Eye Area";
+                analysis.innerText = "The skin around your eyes is thinner and showing signs of environmental stress and dehydration.";
+                pName.innerText = "YCZ Pro-Xylane Eye Cream";
+                pDesc.innerText = "Rich in Pro-Xylane and Caffeine to reduce puffiness and strengthen the skin barrier around the delicate eye contour.";
+            } else if (primary === 'dry') {
+                display.innerText = "Dehydrated & Dry";
+                analysis.innerText = "Your skin lacks essential lipids and moisture, leading to a tight feeling and potential dullness.";
+                pName.innerText = "YCZ Deep Moisturizing Set";
+                pDesc.innerText = "A multi-layer hydration system that uses Glycerin and natural extracts to restore your skin's glow.";
+            } else {
+                display.innerText = "Balanced / Combination";
+                analysis.innerText = "Your skin is relatively healthy but could benefit from targeted prevention to maintain its current elasticity.";
+                pName.innerText = "YCZ AH8 Firming Neck Cream";
+                pDesc.innerText = "Start your prevention early with our AH8 formula to maintain a sharp, firm jawline.";
+            }
+        }
+
+        // Initialize
+        loadQuestion();
+    </script>
+</body>
+</html>
